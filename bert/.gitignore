@@ -16,3 +16,6 @@ bert-mkor.e*
 bert-mkor.o*
 hostfile
 
+data/
+mkor_results/
+bert/wandb

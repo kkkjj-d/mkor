@@ -2,7 +2,7 @@
 	"model_config_file": "config/bert_large_uncased_config.json",
 	"fp16": false,
 	"max_predictions_per_seq": 76,
-	"learning_rate": 0.005,
+	"learning_rate": 0.1,
 	"lr_decay": "cosine",
 	"warmup_proportion": 0.001,
 	"global_batch_size": 128,
