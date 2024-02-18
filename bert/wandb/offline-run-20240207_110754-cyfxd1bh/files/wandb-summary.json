@@ -1,0 +1,1 @@
+{"step": 3200, "epoch": 0, "average_loss": 4.450564519640168, "step_loss": 4.608861923217773, "learning_rate": 1.0000000000000001e-07, "_timestamp": 1707278306.7459362, "_runtime": 3032.5711851119995, "_step": 3199, "_wandb": {"runtime": 3037}}

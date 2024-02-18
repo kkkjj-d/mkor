@@ -1,0 +1,28 @@
+  0%|▎                                                                                        | 735/210632 [06:22<28:30:17,  2.05it/s]Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f64146031f0>
+Traceback (most recent call last):
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1328, in __del__
+    self._shutdown_workers()
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1301, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/multiprocessing/popen_fork.py", line 44, in wait
+    if not wait([self.sentinel], timeout):
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/multiprocessing/connection.py", line 931, in wait
+    ready = selector.select(timeout)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt:
+  0%|▎                                                                                        | 735/210632 [06:23<30:25:46,  1.92it/s]
+Traceback (most recent call last):
+  File "run_pretraining.py", line 735, in <module>
+    global_steps, train_time = main(args)
+  File "run_pretraining.py", line 633, in main
+    loss = forward_backward_pass(model, criterion, scaler, batch,
+  File "run_pretraining.py", line 591, in forward_backward_pass
+    scaler.scale(loss).backward()
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/_tensor.py", line 307, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/autograd/__init__.py", line 154, in backward
+    Variable._execution_engine.run_backward(
+KeyboardInterrupt

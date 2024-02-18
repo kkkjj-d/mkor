@@ -269,7 +269,9 @@ class BertConfig(object):
     @classmethod
     def from_json_file(cls, json_file):
         """Constructs a `BertConfig` from a json file of parameters."""
+        # print(json_file)
         with open(json_file, "r", encoding='utf-8') as reader:
+            # print(json_file)
             text = reader.read()
         return cls.from_dict(json.loads(text))
 
@@ -669,7 +671,7 @@ class BertPreTrainedModel(nn.Module):
 
     @classmethod
     def from_pretrained(cls, pretrained_model_name_or_path, state_dict=None, cache_dir=None,
-                        from_tf=False, *inputs, **kwargs):
+                        from_tf=False, config=None, *inputs, **kwargs):
         """
         Instantiate a BertPreTrainedModel from a pre-trained model file or a pytorch state dict.
         Download and cache the pre-trained model file if needed.
@@ -729,8 +731,8 @@ class BertPreTrainedModel(nn.Module):
                 archive.extractall(tempdir)
             serialization_dir = tempdir
         # Load config
-        config_file = os.path.join(serialization_dir, CONFIG_NAME)
-        config = BertConfig.from_json_file(config_file)
+        # config_file = os.path.join(serialization_dir, CONFIG_NAME)
+        # config = BertConfig.from_json_file(config_file)
         logger.info("Model config {}".format(config))
         # Instantiate model.
         model = cls(config, *inputs, **kwargs)
@@ -742,7 +744,8 @@ class BertPreTrainedModel(nn.Module):
             shutil.rmtree(tempdir)
         if from_tf:
             # Directly load from a TensorFlow checkpoint
-            weights_path = os.path.join(serialization_dir, TF_WEIGHTS_NAME)
+            # weights_path = os.path.join(serialization_dir, TF_WEIGHTS_NAME)
+            weights_path = serialization_dir
             return load_tf_weights_in_bert(model, weights_path)
         # Load from a PyTorch state_dict
         old_keys = []

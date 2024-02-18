@@ -1,12 +1,12 @@
 #!/bin/bash
 
 DATA_PATH="data"
-INCLUDE_BOOKS=true
+INCLUDE_BOOKS=false
 N_PROCESSES=4
 DOWNLOAD=false
 FORMAT=false
 ENCODE=false
-ENCODE_TYPE="roberta"
+ENCODE_TYPE="bert"
 
 while [[ "$1" == -* ]]; do
     case "$1" in
@@ -59,12 +59,12 @@ if [ "$DOWNLOAD" == true ]; then
     DOWNLOAD_PATH=$DATA_PATH/download
 else
     # Path to predownloaded datasets on Theta
-    DOWNLOAD_PATH=/lus/theta-fs0/projects/SuperBERT/datasets/download 
+    DOWNLOAD_PATH=$DATA_PATH/download
 fi
 
 FORMAT_PATH=$DATA_PATH/formatted
 ENCODED_PATH=$DATA_PATH/encoded
-VOCAB_FILE=$DOWNLOAD_PATH/google_pretrained_weights/uncased_L-24_H-1024_A-16/vocab.txt
+VOCAB_FILE=$DOWNLOAD_PATH/vocab.txt
 
 echo "./create_datasets.sh:"
 echo "    download=$DOWNLOAD"
@@ -91,14 +91,14 @@ if [ "$FORMAT" == true ]; then
     # Extract articles from wikicorpus xml file into files of 100M each
     # This allows us to parallelize next step
     mkdir -p $DOWNLOAD_PATH/wikicorpus/data
-    wikiextractor $DOWNLOAD_PATH/wikicorpus/wikicorpus_en.xml --bytes 25M \
+    python -m wikiextractor.WikiExtractor $DOWNLOAD_PATH/wikicorpus/wikicorpus_en.xml --bytes 1024M \
         --processes $N_PROCESSES --output $DOWNLOAD_PATH/wikicorpus/data
 
     # Extract the data into text files where each line is a sentence and each
     # article is separated by a blank line. To prevent massive files,
     # articles/books are distributed across shards.
     python utils/format.py --dataset wikicorpus --processes $N_PROCESSES \
-        --input_dir $DOWNLOAD_PATH/wikicorpus/data \
+        --input_dir $DOWNLOAD_PATH/wikicorpus/data/AA \
         --output_dir $FORMAT_PATH/wikicorpus --shards 256
     if [ "$INCLUDE_BOOKS" == true ]; then
         python utils/format.py --dataset bookscorpus --processes $N_PROCESSES \
@@ -130,11 +130,11 @@ if [ "$ENCODE" == true ]; then
         # BERT Encoding:
         #   - next sequence prediction
         #   - two training phases (128 and 512 length sequences)
-        python utils/encode_pretraining_data.py \
-            --input_dir $FORMAT_PATH --output_dir $ENCODED_PATH \
-            --vocab $VOCAB_FILE --max_seq_len 128 --short_seq_prob 0.1 \
-            --next_seq_prob 0.5 --processes $N_PROCESSES
-        python utils/encode_pretraining_data.py \
+        # python utils/encode_pretraining_data.py \
+        #     --input_dir $FORMAT_PATH --output_dir $ENCODED_PATH \
+        #     --vocab $VOCAB_FILE --max_seq_len 128 --short_seq_prob 0.1 \
+        #     --next_seq_prob 0.5 --processes $N_PROCESSES
+        python utils/encode_data.py \
             --input_dir $FORMAT_PATH --output_dir $ENCODED_PATH \
             --vocab $VOCAB_FILE --max_seq_len 512 --short_seq_prob 0 \
             --next_seq_prob 0.5 --processes $N_PROCESSES

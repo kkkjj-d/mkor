@@ -9,6 +9,26 @@ from optimizers.eva_utils import get_vector_a, get_vector_g
 import logging
 logger = logging.getLogger()
 
+
+def clip_norm_(mat, max_norm: float, norm_type: float = 2.0) -> torch.Tensor:
+    max_norm = float(max_norm)
+    norm_type = float(norm_type)
+    if len(mat) == 0:
+        return torch.tensor(0.)
+    device = mat.device
+    total_norm = torch.norm(mat, norm_type).to(device)
+    clip_coef = max_norm / (total_norm + 1e-6)
+    clip_coef_clamped = torch.clamp(clip_coef, max=1.0)
+    mat.mul_(clip_coef_clamped.to(device))
+    return total_norm
+
+def get_damping(step):
+    # max_damping = 0.03
+    # min_damping = 0.005
+    # damping = min_damping + (max_damping - min_damping) * step/32000
+    # return damping
+    return 0.03
+
 class Eva(optim.Optimizer):
     """Accelerate Distributed K-FAC with Sublinear Memory Cost
     Args:
@@ -75,6 +95,8 @@ class Eva(optim.Optimizer):
         self.steps = 0
         self.optimizer = optimizer
         self.param_groups = optimizer.param_groups
+        self.param_groups[0]['step'] = 0
+        self.vg_sum = 0
 
     def update_grad_scale(self, scaler):
         self.grad_scale = scaler
@@ -88,7 +110,7 @@ class Eva(optim.Optimizer):
         """Default: hook for saving input (a)"""
         if self.hook_enabled and torch.is_grad_enabled() and self.steps % self.fac_update_freq == 0:
             with torch.no_grad():
-                new = get_vector_a(input[0].data[0:self.kfac_batch_size], module)
+                new = get_vector_a(input[0].data[0:self.kfac_batch_size], module).to(dtype=torch.float32)
                 if module not in self.m_a:
                     self.m_a[module] = new
                 else:
@@ -103,7 +125,7 @@ class Eva(optim.Optimizer):
         """Default: hook for saving gradient w.r.t output (g)"""
         if self.hook_enabled and self.steps % self.fac_update_freq == 0:
             with torch.no_grad():
-                new = get_vector_g(grad_output[0].data[0:self.kfac_batch_size], module) / self.grad_scale
+                new = get_vector_g(grad_output[0].data[0:self.kfac_batch_size], module).to(dtype=torch.float32) / self.grad_scale
                 if module not in self.m_g:
                     self.m_g[module] = new
                 else:
@@ -162,6 +184,7 @@ class Eva(optim.Optimizer):
 
             # compute preconditioned grads
             v = (mg @ ma.T).mul_(-ag/(a * g + self.damping))
+            # clip_norm_(v,2.0)
             v.add_(grad)
             v.div_(self.damping)
 
@@ -194,7 +217,7 @@ class Eva(optim.Optimizer):
                 # copy
                 module.weight.grad.data.copy_(weight)
             del v
-
+        self.vg_sum = vg_sum
         # scale preconditioned gradient
         if self.kl_clip is not None:
             if self.kl_clip > 0: # kl-clip
@@ -216,6 +239,7 @@ class Eva(optim.Optimizer):
             grad = module.weight.grad.data
         if module.bias is not None:
             grad = torch.cat([grad, module.bias.grad.data.view(-1, 1)], 1)
+        grad = grad.to(dtype=torch.float32)
         return grad    
 
 
@@ -226,8 +250,8 @@ class Eva(optim.Optimizer):
 
         # update params, used for compatibilty with `KFACParamScheduler`
         group = self.param_groups[0]
-        self.lr = self.lr
-        self.damping = self.damping
+        self.lr = group['lr']
+        self.damping = get_damping(self.steps)
         self.fac_update_freq = self.fac_update_freq
         self.kfac_update_freq = self.kfac_update_freq
 
@@ -239,5 +263,5 @@ class Eva(optim.Optimizer):
         self._precondition_grads()
 
         self.optimizer.step()
-
         self.steps += 1
+        self.param_groups[0]['step'] += 1

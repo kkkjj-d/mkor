@@ -36,7 +36,7 @@ class Formatter():
                 files.append(str(path))
         
         if len(files) == 0:
-            raise RuntimeError('Found 0 files in {}'.format(input_dir))
+            raise RuntimeError('Found 0 files in {}'.format(self.input_dir))
 
         if shards < 1:
             shards = len(files)

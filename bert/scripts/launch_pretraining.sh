@@ -34,10 +34,6 @@ while [[ "$1" == -* ]]; do
             shift
             LOCAL_RANK="$1"
         ;;
-        -s|--singularity)
-            shift
-            SINGULARITY="$1"
-        ;;
         -p|--phase)
             shift
             PHASE="$1"
@@ -78,30 +74,25 @@ export OMP_NUM_THREADS=$((NUM_THREADS / NGPUS))
 
 PWD=$(pwd)
 
-if [ "$SINGULARITY" = True ]; then
-    mkdir /tmp/torch.sif && tar -xf /scratch/09070/tg883700/torch.tar -C /tmp
-    SINGULARITY="singularity exec --bind $PWD:/home --bind /tmp:/tmp --nv /tmp/torch.sif "
-else
-    source /scratch/09070/tg883700/pytorch/bin/activate
-    SINGULARITY=""
-fi
 
-mkdir /tmp/data && tar -xf /scratch/09070/tg883700/datasets/bert/pretraining/phase${PHASE}.tar -C /tmp/data
+# mkdir /tmp/data && tar -xf /scratch/09070/tg883700/datasets/bert/pretraining/phase${PHASE}.tar -C /tmp/data
 
-module load tacc-apptainer
+# module load tacc-apptainer
 export OMP_NUM_THREADS=8
 
 
 echo Launching torch.distributed: nproc_per_node=$NGPUS, nnodes=$NNODES, master_addr=$MASTER, local_rank=$LOCAL_RANK, OMP_NUM_THREADS=$OMP_NUM_THREADS, host=$HOSTNAME
-echo $SINGULARITY python -m torch.distributed.launch --nproc_per_node=$NGPUS run_pretraining.py $KWARGS
+echo python -m torch.distributed.launch --nproc_per_node=$NGPUS run_pretraining.py $KWARGS
 
 
 if [[ "$NNODES" -eq 1 ]]; then
-    $SINGULARITY python -m torch.distributed.launch --nproc_per_node=$NGPUS \
+    python -m torch.distributed.launch --nproc_per_node=$NGPUS \
         run_pretraining.py $KWARGS
 else
-    $SINGULARITY python -m torch.distributed.launch \
+    python -m torch.distributed.launch \
         --nproc_per_node=$NGPUS --nnodes=$NNODES \
         --node_rank=$LOCAL_RANK --master_addr=$MASTER \
         run_pretraining.py $KWARGS
 fi
+# torchrun --nproc_per_node=$NGPUS \
+#     run_pretraining.py $KWARGS

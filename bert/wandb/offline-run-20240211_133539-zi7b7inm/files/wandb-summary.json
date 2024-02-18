@@ -1,0 +1,1 @@
+{"damping": 0.05, "kl_clip": 0.001, "_timestamp": 1707656623.1524582, "_runtime": 26883.30134510994, "_step": 64001, "step": 32000, "epoch": 0, "average_loss": NaN, "step_loss": NaN, "learning_rate": 6.000000000000001e-07, "vg_sum": NaN, "_wandb": {"runtime": 26889}}

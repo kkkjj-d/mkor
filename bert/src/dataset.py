@@ -107,6 +107,8 @@ class ShardedPretrainingDataset(torch.utils.data.Dataset):
             files = [files]
         files.sort()  # Ensure processes see files in same order
         self.files, self.file_idxs = self._verify_and_count_samples(files)
+        # for idx,(start,end) in enumerate(self.file_idxs):
+        #     print(idx,start,end)
 
         self.mask_token_index = mask_token_index
         self.max_pred_per_seq = max_pred_per_seq
@@ -145,7 +147,7 @@ class ShardedPretrainingDataset(torch.utils.data.Dataset):
             self.next_file_idx = self._get_file_idx_from_sample_idx(idx)
             self.next_file_thread = self._async_load_file(self.next_file_idx)
 
-        if idx >= self.file_sample_end_idx or idx < self.file_sample_start_idx:
+        while (idx >= self.file_sample_end_idx or idx < self.file_sample_start_idx):
             # Done with data for current file so get next data from future
             del self.data  # force clear this memory
             self.next_file_thread.join()

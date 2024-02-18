@@ -5,3 +5,4 @@ from .mkor import MKOROptimizer
 from .kaisa import KAISAOptimizer
 from .hkor import HKOROptimizer
 from .lamb import LAMBOptimizer
+from .eva import Eva

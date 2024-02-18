@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "run_pretraining.py", line 735, in <module>
+    global_steps, train_time = main(args)
+  File "run_pretraining.py", line 601, in main
+    model, checkpoint, global_steps, criterion, args = prepare_model(args)
+  File "run_pretraining.py", line 298, in prepare_model
+    model = DDP(model, device_ids=[args.local_rank])
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/parallel/distributed.py", line 578, in __init__
+    dist._verify_model_across_ranks(self.process_group, parameters)
+RuntimeError: NCCL error in: /opt/conda/conda-bld/pytorch_1634272068694/work/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:957, invalid usage, NCCL version 21.0.3
+ncclInvalidUsage: This usually reflects invalid usage of NCCL library (such as too many async ops, too many collectives at once, mixing streams in a group, etc).

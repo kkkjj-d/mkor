@@ -1,0 +1,17 @@
+run_pretraining.py:247: UserWarning: local_accumulated_batch_size=1 is not divisible by local_batch_size=8. local_accumulated_batch_size is global_batch_size // world_size. The last batch will be padded with additional samples
+  warnings.warn('local_accumulated_batch_size={} is not divisible '
+/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/utils/data/dataloader.py:478: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+  0%|          | 0/210632 [04:59<?, ?it/s]
+Traceback (most recent call last):
+  File "run_pretraining.py", line 735, in <module>
+    global_steps, train_time = main(args)
+  File "run_pretraining.py", line 662, in main
+    wandb.log(tag='train',
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 420, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 371, in wrapper_fn
+    return func(self, *args, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 361, in wrapper
+    return func(self, *args, **kwargs)
+TypeError: log() got an unexpected keyword argument 'tag'

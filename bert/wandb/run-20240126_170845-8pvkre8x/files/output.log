@@ -1,0 +1,44 @@
+/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/utils/data/dataloader.py:478: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+Traceback (most recent call last):
+  File "run_pretraining.py", line 735, in <module>
+    global_steps, train_time = main(args)
+  File "run_pretraining.py", line 633, in main
+    loss = forward_backward_pass(model, criterion, scaler, batch,
+  File "run_pretraining.py", line 548, in forward_backward_pass
+    prediction_scores, seq_relationship_score = model(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/parallel/distributed.py", line 886, in forward
+    output = self.module(*inputs[0], **kwargs[0])
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 935, in forward
+    encoded_layers, pooled_output = self.bert(input_ids, token_type_ids, attention_mask)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 865, in forward
+    encoded_layers = self.encoder(embedding_output, extended_attention_mask)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 540, in forward
+    hidden_states = layer_module(hidden_states, attention_mask)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 502, in forward
+    intermediate_output = self.intermediate(attention_output)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 475, in forward
+    hidden_states = timer(fused + "Linear Layer", self.dense_act, hidden_states)
+  File "/home/yanxindong/mkor/bert/timer.py", line 101, in __call__
+    output = func(*args, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 184, in forward
+    return self.biased_act_fn(self.bias, F.linear(input, self.weight, None))
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 135, in bias_gelu_training
+    return torch.nn.functional.gelu(x) # Breaks ONNX export
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/functional.py", line 1556, in gelu
+    return torch._C._nn.gelu(input)
+RuntimeError: CUDA out of memory. Tried to allocate 256.00 MiB (GPU 2; 47.54 GiB total capacity; 34.27 GiB already allocated; 251.19 MiB free; 34.67 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

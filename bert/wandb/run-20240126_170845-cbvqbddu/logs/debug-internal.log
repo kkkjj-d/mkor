@@ -1,0 +1,639 @@
+2024-01-26 17:08:45,813 INFO    StreamThr :3042419 [internal.py:wandb_internal():86] W&B internal server running at pid: 3042419, started at: 2024-01-26 17:08:45.812651
+2024-01-26 17:08:45,831 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status
+2024-01-26 17:08:45,832 INFO    WriterThread:3042419 [datastore.py:open_for_write():87] open: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/run-cbvqbddu.wandb
+2024-01-26 17:08:45,832 DEBUG   SenderThread:3042419 [sender.py:send():382] send: header
+2024-01-26 17:08:45,833 DEBUG   SenderThread:3042419 [sender.py:send():382] send: run
+2024-01-26 17:08:46,637 INFO    SenderThread:3042419 [dir_watcher.py:__init__():211] watching files in: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files
+2024-01-26 17:08:46,638 INFO    SenderThread:3042419 [sender.py:_start_run_threads():1136] run started: cbvqbddu with start time 1706260125.799841
+2024-01-26 17:08:46,639 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: check_version
+2024-01-26 17:08:46,639 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: check_version
+2024-01-26 17:08:47,004 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: run_start
+2024-01-26 17:08:47,023 DEBUG   HandlerThread:3042419 [system_info.py:__init__():27] System info init
+2024-01-26 17:08:47,023 DEBUG   HandlerThread:3042419 [system_info.py:__init__():42] System info init done
+2024-01-26 17:08:47,023 INFO    HandlerThread:3042419 [system_monitor.py:start():194] Starting system monitor
+2024-01-26 17:08:47,036 INFO    SystemMonitor:3042419 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-01-26 17:08:47,036 INFO    HandlerThread:3042419 [system_monitor.py:probe():214] Collecting system info
+2024-01-26 17:08:47,053 INFO    SystemMonitor:3042419 [interfaces.py:start():190] Started cpu monitoring
+2024-01-26 17:08:47,061 INFO    SystemMonitor:3042419 [interfaces.py:start():190] Started disk monitoring
+2024-01-26 17:08:47,065 INFO    SystemMonitor:3042419 [interfaces.py:start():190] Started gpu monitoring
+2024-01-26 17:08:47,066 INFO    SystemMonitor:3042419 [interfaces.py:start():190] Started memory monitoring
+2024-01-26 17:08:47,067 INFO    SystemMonitor:3042419 [interfaces.py:start():190] Started network monitoring
+2024-01-26 17:08:47,159 DEBUG   HandlerThread:3042419 [system_info.py:probe():151] Probing system
+2024-01-26 17:08:47,183 DEBUG   HandlerThread:3042419 [system_info.py:_probe_git():136] Probing git
+2024-01-26 17:08:47,207 DEBUG   HandlerThread:3042419 [system_info.py:_probe_git():144] Probing git done
+2024-01-26 17:08:47,207 DEBUG   HandlerThread:3042419 [system_info.py:probe():199] Probing system done
+2024-01-26 17:08:47,207 DEBUG   HandlerThread:3042419 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-91-generic-x86_64-with-glibc2.17', 'python': '3.8.17', 'heartbeatAt': '2024-01-26T09:08:47.159497', 'startedAt': '2024-01-26T09:08:45.783171', 'docker': None, 'cuda': None, 'args': ('--local_rank=0', '--config_file', 'config/bert_pretraining_phase2_config.json', '--input_dir', '/home/yanxindong/mkor/bert/data/encoded/sequences_lowercase_max_seq_len_512_next_seq_task_true', '--output_dir', 'results/adam', '--weight_decay', '0.01', '--num_steps_per_checkpoint', '200'), 'state': 'running', 'program': 'run_pretraining.py', 'codePathLocal': 'run_pretraining.py', 'codePath': 'bert/run_pretraining.py', 'git': {'remote': 'https://github.com/kkkjj-d/mkor.git', 'commit': 'efe99e84fef5594780cfb1df6d6a1f61da4ebba0'}, 'email': '1262670315@qq.com', 'root': '/home/yanxindong/mkor', 'host': 'a6000-X640-G40', 'username': 'yanxindong', 'executable': '/home/yanxindong/anaconda/envs/eva/bin/python', 'cpu_count': 64, 'cpu_count_logical': 128, 'cpu_freq': {'current': 2031.2500078124997, 'min': 800.0, 'max': 3400.0}, 'cpu_freq_per_core': [{'current': 3148.623, 'min': 800.0, 'max': 3400.0}, {'current': 3300.0, 'min': 800.0, 'max': 3400.0}, {'current': 1967.101, 'min': 800.0, 'max': 3400.0}, {'current': 2200.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 1700.0, 'min': 800.0, 'max': 3400.0}, {'current': 2300.0, 'min': 800.0, 'max': 3400.0}, {'current': 2200.0, 'min': 800.0, 'max': 3400.0}, {'current': 900.0, 'min': 800.0, 'max': 3400.0}, {'current': 3000.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2000.0, 'min': 800.0, 'max': 3400.0}, {'current': 1800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 2700.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 1300.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3300.0, 'min': 800.0, 'max': 3400.0}, {'current': 1779.692, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 2400.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3000.0, 'min': 800.0, 'max': 3400.0}, {'current': 1200.0, 'min': 800.0, 'max': 3400.0}, {'current': 2281.967, 'min': 800.0, 'max': 3400.0}, {'current': 2100.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2200.0, 'min': 800.0, 'max': 3400.0}, {'current': 1809.314, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 1400.0, 'min': 800.0, 'max': 3400.0}, {'current': 2200.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 1200.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 1200.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 1500.0, 'min': 800.0, 'max': 3400.0}, {'current': 1000.0, 'min': 800.0, 'max': 3400.0}, {'current': 2000.0, 'min': 800.0, 'max': 3400.0}, {'current': 1900.0, 'min': 800.0, 'max': 3400.0}, {'current': 1663.406, 'min': 800.0, 'max': 3400.0}, {'current': 1589.714, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3147.878, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 1819.396, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 900.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2300.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3017.101, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 1200.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 1900.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2100.0, 'min': 800.0, 'max': 3400.0}, {'current': 1400.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2269.76, 'min': 800.0, 'max': 3400.0}, {'current': 2000.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 1000.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2745.53, 'min': 800.0, 'max': 3400.0}, {'current': 2792.345, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2027.593, 'min': 800.0, 'max': 3400.0}, {'current': 1700.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2100.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 1847.167, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2889.276, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2422.466, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2781.207, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}], 'disk': {'/': {'total': 438.05088806152344, 'used': 28.042591094970703}}, 'gpu': 'NVIDIA RTX A6000', 'gpu_count': 8, 'gpu_devices': [{'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}], 'memory': {'total': 503.51250076293945}}
+2024-01-26 17:08:47,208 INFO    HandlerThread:3042419 [system_monitor.py:probe():224] Finished collecting system info
+2024-01-26 17:08:47,208 INFO    HandlerThread:3042419 [system_monitor.py:probe():227] Publishing system info
+2024-01-26 17:08:47,208 DEBUG   HandlerThread:3042419 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-01-26 17:08:47,636 INFO    Thread-12 :3042419 [dir_watcher.py:_on_file_created():271] file/dir created: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/conda-environment.yaml
+2024-01-26 17:08:56,636 INFO    Thread-12 :3042419 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/conda-environment.yaml
+2024-01-26 17:08:57,000 DEBUG   HandlerThread:3042419 [system_info.py:_save_conda():220] Saving conda packages done
+2024-01-26 17:08:57,002 INFO    HandlerThread:3042419 [system_monitor.py:probe():229] Finished publishing system info
+2024-01-26 17:08:57,009 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:08:57,015 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:08:57,015 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:08:57,015 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:08:57,015 DEBUG   SenderThread:3042419 [sender.py:send():382] send: files
+2024-01-26 17:08:57,015 INFO    SenderThread:3042419 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-01-26 17:08:57,015 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: python_packages
+2024-01-26 17:08:57,017 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: python_packages
+2024-01-26 17:08:57,065 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:08:57,065 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:08:57,066 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:08:57,327 DEBUG   SenderThread:3042419 [sender.py:send():382] send: telemetry
+2024-01-26 17:08:57,637 INFO    Thread-12 :3042419 [dir_watcher.py:_on_file_created():271] file/dir created: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/requirements.txt
+2024-01-26 17:08:57,637 INFO    Thread-12 :3042419 [dir_watcher.py:_on_file_created():271] file/dir created: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/wandb-metadata.json
+2024-01-26 17:08:57,941 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb18687880>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:08:57,942 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15646'}
+2024-01-26 17:08:57,942 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:08:59,079 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb18687670>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:08:59,079 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15646'}
+2024-01-26 17:08:59,079 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:09:01,328 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:09:01,438 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb1854a340>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:09:01,438 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15646'}
+2024-01-26 17:09:01,438 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:09:01,438 INFO    wandb-upload_0:3042419 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7ffb1854a340>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb1854a340>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 2758, in upload_file
+    response = self._upload_file_session.put(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb1854a340>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 2789, in upload_file
+    raise _e.with_traceback(sys.exc_info()[2])
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 2758, in upload_file
+    response = self._upload_file_session.put(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+wandb.sdk.lib.retry.TransientError: None
+2024-01-26 17:09:06,226 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb186da400>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:09:06,226 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15646'}
+2024-01-26 17:09:06,226 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:09:06,329 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:09:11,329 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:09:12,039 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:09:12,040 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:09:12,082 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:09:15,974 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb1854a3d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:09:15,974 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15646'}
+2024-01-26 17:09:15,974 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:09:17,332 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:09:17,643 INFO    Thread-12 :3042419 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/config.yaml
+2024-01-26 17:09:22,698 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:09:27,040 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:09:27,040 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:09:27,082 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:09:28,323 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:09:33,150 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb185ee6a0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:09:33,150 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15646'}
+2024-01-26 17:09:33,150 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:09:33,350 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:09:38,350 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:09:42,039 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:09:42,040 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:09:42,082 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:09:44,305 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:09:47,067 DEBUG   SystemMonitor:3042419 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-01-26 17:09:47,071 DEBUG   SenderThread:3042419 [sender.py:send():382] send: stats
+2024-01-26 17:09:50,072 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:09:55,073 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:09:57,040 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:09:57,046 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:09:57,082 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:10:00,358 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:10:05,398 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:10:10,400 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:10:12,040 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:10:12,040 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:10:12,054 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb1854abe0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:10:12,054 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15646'}
+2024-01-26 17:10:12,054 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:10:12,092 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:10:16,381 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:10:17,074 DEBUG   SenderThread:3042419 [sender.py:send():382] send: stats
+2024-01-26 17:10:22,076 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:10:27,040 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:10:27,040 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:10:27,082 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:10:27,414 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:10:32,415 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:10:33,869 INFO    Thread-12 :3042419 [dir_watcher.py:_on_file_created():271] file/dir created: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/output.log
+2024-01-26 17:10:35,870 INFO    Thread-12 :3042419 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/output.log
+2024-01-26 17:10:38,154 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:10:43,155 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:10:46,172 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:10:46,173 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:10:47,075 DEBUG   SenderThread:3042419 [sender.py:send():382] send: stats
+2024-01-26 17:10:49,076 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:10:50,058 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:10:54,100 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:10:59,126 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:11:01,172 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:11:01,172 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:11:01,214 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:11:04,601 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:11:10,180 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:11:15,258 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:11:16,194 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:11:16,194 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:11:16,194 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:11:17,077 DEBUG   SenderThread:3042419 [sender.py:send():382] send: stats
+2024-01-26 17:11:21,100 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:11:26,222 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:11:26,767 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb1854ad60>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:11:26,767 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15646'}
+2024-01-26 17:11:26,767 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:11:31,172 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:11:31,172 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:11:31,176 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:11:31,533 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:11:37,038 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:11:42,038 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:11:46,172 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:11:46,172 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:11:46,214 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:11:47,080 DEBUG   SenderThread:3042419 [sender.py:send():382] send: stats
+2024-01-26 17:11:47,084 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:11:53,038 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:11:58,038 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:12:01,172 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:12:01,172 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:12:01,214 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:12:03,469 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:12:09,038 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:12:14,148 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:12:16,172 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:12:16,172 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:12:16,214 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:12:17,082 DEBUG   SenderThread:3042419 [sender.py:send():382] send: stats
+2024-01-26 17:12:20,038 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:12:25,074 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:12:30,074 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:12:31,172 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:12:31,172 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:12:31,213 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:12:36,038 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:12:41,090 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:12:46,118 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:12:46,172 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:12:46,173 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:12:46,214 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:12:47,085 DEBUG   SenderThread:3042419 [sender.py:send():382] send: stats
+2024-01-26 17:12:52,038 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:12:57,039 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:13:01,172 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:13:01,173 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:13:01,214 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:13:02,469 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:13:08,038 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:13:13,039 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:13:16,172 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:13:16,173 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:13:16,214 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:13:17,100 DEBUG   SenderThread:3042419 [sender.py:send():382] send: stats
+2024-01-26 17:13:18,101 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:13:23,122 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:13:28,146 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:13:31,342 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:13:31,342 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:13:31,343 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:13:33,648 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:13:39,058 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:13:44,138 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:13:46,172 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:13:46,173 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:13:46,214 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:13:47,102 DEBUG   SenderThread:3042419 [sender.py:send():382] send: stats
+2024-01-26 17:13:49,168 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:13:54,487 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb185ee460>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:13:54,487 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15646'}
+2024-01-26 17:13:54,487 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:13:55,110 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:14:00,113 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:14:01,173 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:14:01,173 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:14:01,213 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:14:06,038 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:14:11,039 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:14:16,040 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:14:16,173 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:14:16,173 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:14:16,214 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:14:17,104 DEBUG   SenderThread:3042419 [sender.py:send():382] send: stats
+2024-01-26 17:14:22,039 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:14:27,039 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:14:31,173 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:14:31,173 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:14:31,214 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:14:32,582 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:14:38,126 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:14:43,134 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:14:46,173 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:14:46,173 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:14:46,214 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:14:47,106 DEBUG   SenderThread:3042419 [sender.py:send():382] send: stats
+2024-01-26 17:14:49,115 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:14:55,041 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:14:58,432 DEBUG   SenderThread:3042419 [sender.py:send():382] send: exit
+2024-01-26 17:14:58,432 INFO    SenderThread:3042419 [sender.py:send_exit():589] handling exit code: 1
+2024-01-26 17:14:58,432 INFO    SenderThread:3042419 [sender.py:send_exit():591] handling runtime: 371
+2024-01-26 17:14:58,432 INFO    SenderThread:3042419 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-26 17:14:58,433 INFO    SenderThread:3042419 [sender.py:send_exit():597] send defer
+2024-01-26 17:14:58,433 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: defer
+2024-01-26 17:14:58,433 INFO    HandlerThread:3042419 [handler.py:handle_request_defer():172] handle defer: 0
+2024-01-26 17:14:58,433 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: defer
+2024-01-26 17:14:58,433 INFO    SenderThread:3042419 [sender.py:send_request_defer():613] handle sender defer: 0
+2024-01-26 17:14:58,433 INFO    SenderThread:3042419 [sender.py:transition_state():617] send defer: 1
+2024-01-26 17:14:58,433 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: defer
+2024-01-26 17:14:58,433 INFO    HandlerThread:3042419 [handler.py:handle_request_defer():172] handle defer: 1
+2024-01-26 17:14:58,434 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: defer
+2024-01-26 17:14:58,434 INFO    SenderThread:3042419 [sender.py:send_request_defer():613] handle sender defer: 1
+2024-01-26 17:14:58,434 INFO    SenderThread:3042419 [sender.py:transition_state():617] send defer: 2
+2024-01-26 17:14:58,434 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: defer
+2024-01-26 17:14:58,434 INFO    HandlerThread:3042419 [handler.py:handle_request_defer():172] handle defer: 2
+2024-01-26 17:14:58,434 INFO    HandlerThread:3042419 [system_monitor.py:finish():203] Stopping system monitor
+2024-01-26 17:14:58,434 DEBUG   SystemMonitor:3042419 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-01-26 17:14:58,434 DEBUG   SystemMonitor:3042419 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-01-26 17:14:58,441 INFO    HandlerThread:3042419 [interfaces.py:finish():202] Joined cpu monitor
+2024-01-26 17:14:58,442 INFO    HandlerThread:3042419 [interfaces.py:finish():202] Joined disk monitor
+2024-01-26 17:14:59,252 INFO    Thread-12 :3042419 [dir_watcher.py:_on_file_created():271] file/dir created: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/wandb-summary.json
+2024-01-26 17:15:00,252 INFO    Thread-12 :3042419 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/output.log
+2024-01-26 17:15:03,804 INFO    HandlerThread:3042419 [interfaces.py:finish():202] Joined gpu monitor
+2024-01-26 17:15:03,804 INFO    HandlerThread:3042419 [interfaces.py:finish():202] Joined memory monitor
+2024-01-26 17:15:03,804 INFO    HandlerThread:3042419 [interfaces.py:finish():202] Joined network monitor
+2024-01-26 17:15:03,804 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-26 17:15:03,804 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:15:03,805 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: defer
+2024-01-26 17:15:03,805 INFO    SenderThread:3042419 [sender.py:send_request_defer():613] handle sender defer: 2
+2024-01-26 17:15:03,805 INFO    SenderThread:3042419 [sender.py:transition_state():617] send defer: 3
+2024-01-26 17:15:03,805 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: defer
+2024-01-26 17:15:03,805 INFO    HandlerThread:3042419 [handler.py:handle_request_defer():172] handle defer: 3
+2024-01-26 17:15:03,806 DEBUG   SenderThread:3042419 [sender.py:send():382] send: stats
+2024-01-26 17:15:03,807 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: poll_exit
+2024-01-26 17:15:03,807 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: defer
+2024-01-26 17:15:03,807 INFO    SenderThread:3042419 [sender.py:send_request_defer():613] handle sender defer: 3
+2024-01-26 17:15:03,807 INFO    SenderThread:3042419 [sender.py:transition_state():617] send defer: 4
+2024-01-26 17:15:03,807 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: defer
+2024-01-26 17:15:03,807 INFO    HandlerThread:3042419 [handler.py:handle_request_defer():172] handle defer: 4
+2024-01-26 17:15:03,808 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: defer
+2024-01-26 17:15:03,808 INFO    SenderThread:3042419 [sender.py:send_request_defer():613] handle sender defer: 4
+2024-01-26 17:15:03,808 INFO    SenderThread:3042419 [sender.py:transition_state():617] send defer: 5
+2024-01-26 17:15:03,808 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: defer
+2024-01-26 17:15:03,808 INFO    HandlerThread:3042419 [handler.py:handle_request_defer():172] handle defer: 5
+2024-01-26 17:15:03,808 DEBUG   SenderThread:3042419 [sender.py:send():382] send: summary
+2024-01-26 17:15:03,808 INFO    SenderThread:3042419 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-26 17:15:03,808 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: defer
+2024-01-26 17:15:03,808 INFO    SenderThread:3042419 [sender.py:send_request_defer():613] handle sender defer: 5
+2024-01-26 17:15:03,808 INFO    SenderThread:3042419 [sender.py:transition_state():617] send defer: 6
+2024-01-26 17:15:03,809 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: defer
+2024-01-26 17:15:03,809 INFO    HandlerThread:3042419 [handler.py:handle_request_defer():172] handle defer: 6
+2024-01-26 17:15:03,809 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: defer
+2024-01-26 17:15:03,809 INFO    SenderThread:3042419 [sender.py:send_request_defer():613] handle sender defer: 6
+2024-01-26 17:15:03,809 INFO    SenderThread:3042419 [sender.py:transition_state():617] send defer: 7
+2024-01-26 17:15:03,809 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:15:03,809 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: defer
+2024-01-26 17:15:03,809 INFO    HandlerThread:3042419 [handler.py:handle_request_defer():172] handle defer: 7
+2024-01-26 17:15:03,809 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: defer
+2024-01-26 17:15:03,809 INFO    SenderThread:3042419 [sender.py:send_request_defer():613] handle sender defer: 7
+2024-01-26 17:15:04,253 INFO    Thread-12 :3042419 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/wandb-summary.json
+2024-01-26 17:15:04,514 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:15:04,514 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-26 17:15:05,261 INFO    SenderThread:3042419 [sender.py:transition_state():617] send defer: 8
+2024-01-26 17:15:05,261 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: poll_exit
+2024-01-26 17:15:05,261 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: defer
+2024-01-26 17:15:05,261 INFO    HandlerThread:3042419 [handler.py:handle_request_defer():172] handle defer: 8
+2024-01-26 17:15:05,262 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: defer
+2024-01-26 17:15:05,262 INFO    SenderThread:3042419 [sender.py:send_request_defer():613] handle sender defer: 8
+2024-01-26 17:15:05,262 INFO    SenderThread:3042419 [job_builder.py:build():296] Attempting to build job artifact
+2024-01-26 17:15:05,262 INFO    SenderThread:3042419 [job_builder.py:_get_source_type():426] is repo sourced job
+2024-01-26 17:15:05,515 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-26 17:15:05,589 INFO    SenderThread:3042419 [job_builder.py:build():402] adding wandb-job metadata file
+2024-01-26 17:15:05,591 INFO    SenderThread:3042419 [sender.py:transition_state():617] send defer: 9
+2024-01-26 17:15:05,592 DEBUG   SenderThread:3042419 [sender.py:send_request():409] send_request: poll_exit
+2024-01-26 17:15:05,592 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: defer
+2024-01-26 17:15:05,592 INFO    HandlerThread:3042419 [handler.py:handle_request_defer():172] handle defer: 9
+2024-01-26 17:15:05,592 DEBUG   SenderThread:3042419 [sender.py:send():382] send: artifact
+2024-01-26 17:15:06,254 INFO    Thread-12 :3042419 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/output.log
+2024-01-26 17:15:06,516 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-26 17:15:07,350 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb186dadc0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:15:07,350 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'TF7szjdi1iAfnyx8myEJSw==', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '1292'}
+2024-01-26 17:15:07,350 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:15:07,905 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb184f0ac0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:15:07,906 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'aHPCOiOB0VJCSesalIpFpQ==', 'Content-Type': 'application/json', 'Content-Length': '609'}
+2024-01-26 17:15:07,906 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:15:08,501 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb1854a2b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:15:08,501 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'TF7szjdi1iAfnyx8myEJSw==', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '1292'}
+2024-01-26 17:15:08,501 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:15:09,115 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb184f0eb0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:15:09,115 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'aHPCOiOB0VJCSesalIpFpQ==', 'Content-Type': 'application/json', 'Content-Length': '609'}
+2024-01-26 17:15:09,115 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:15:09,115 INFO    wandb-upload_2:3042419 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7ffb184f0eb0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb184f0eb0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 2758, in upload_file
+    response = self._upload_file_session.put(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb184f0eb0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 2789, in upload_file
+    raise _e.with_traceback(sys.exc_info()[2])
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 2758, in upload_file
+    response = self._upload_file_session.put(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+wandb.sdk.lib.retry.TransientError: None
+2024-01-26 17:15:10,781 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb184ed490>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:15:10,782 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'TF7szjdi1iAfnyx8myEJSw==', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '1292'}
+2024-01-26 17:15:10,782 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:15:11,221 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb184f0400>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:15:11,221 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'aHPCOiOB0VJCSesalIpFpQ==', 'Content-Type': 'application/json', 'Content-Length': '609'}
+2024-01-26 17:15:11,221 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:15:11,520 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:15:15,423 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb184f0a30>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:15:15,424 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'TF7szjdi1iAfnyx8myEJSw==', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '1292'}
+2024-01-26 17:15:15,424 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:15:16,071 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb1854a1f0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:15:16,071 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'aHPCOiOB0VJCSesalIpFpQ==', 'Content-Type': 'application/json', 'Content-Length': '609'}
+2024-01-26 17:15:16,071 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:15:16,522 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:15:21,524 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:15:24,110 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb184ed970>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:15:24,110 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'TF7szjdi1iAfnyx8myEJSw==', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '1292'}
+2024-01-26 17:15:24,110 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:15:25,583 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb184edc70>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:15:25,583 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'aHPCOiOB0VJCSesalIpFpQ==', 'Content-Type': 'application/json', 'Content-Length': '609'}
+2024-01-26 17:15:25,583 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:15:26,530 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:15:31,531 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:15:36,533 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:15:40,339 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb184eb4c0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:15:40,339 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'TF7szjdi1iAfnyx8myEJSw==', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '1292'}
+2024-01-26 17:15:40,339 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:15:41,536 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:15:44,527 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb184e3610>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:15:44,527 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'aHPCOiOB0VJCSesalIpFpQ==', 'Content-Type': 'application/json', 'Content-Length': '609'}
+2024-01-26 17:15:44,527 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:15:46,538 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:15:51,540 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:15:56,542 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:16:01,545 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:16:06,547 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:16:11,549 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:16:16,552 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:16:18,860 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb184ebac0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:16:18,860 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'TF7szjdi1iAfnyx8myEJSw==', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '1292'}
+2024-01-26 17:16:18,861 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:16:21,554 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:16:22,596 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb186da640>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:16:22,596 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'aHPCOiOB0VJCSesalIpFpQ==', 'Content-Type': 'application/json', 'Content-Length': '609'}
+2024-01-26 17:16:22,596 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:16:26,556 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:16:31,559 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:16:36,561 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:16:41,563 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:16:46,565 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:16:51,567 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:16:56,570 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:17:01,571 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:17:06,573 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:17:11,575 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:17:16,577 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:17:21,579 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:17:26,580 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:17:28,682 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb184de2e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:17:28,682 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'aHPCOiOB0VJCSesalIpFpQ==', 'Content-Type': 'application/json', 'Content-Length': '609'}
+2024-01-26 17:17:28,682 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:17:31,582 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:17:31,690 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb184e65b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:17:31,690 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'TF7szjdi1iAfnyx8myEJSw==', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '1292'}
+2024-01-26 17:17:31,690 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:17:36,584 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:17:41,586 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:17:46,588 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:17:51,591 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:17:56,593 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:18:01,595 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:18:06,597 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:18:11,599 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:18:16,602 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:18:21,604 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:18:22,779 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/cbvqbddu/wandb-metadata.json?Expires=1706346537&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=S1heUk0hMDuv21OgHxC8Ur%2FQvrDtrGbeFbzG3LBpCRxCNcjVfeSoDeYwmyKoykOl8Hfj0aAgNS7R5Qq7sfVOj%2B4MlIeKQ3aiiv4HFNHPN4HJg8W7djgY38RdXjfnNcQoo6o%2B8XmjQD%2BHn51h%2BNZmVuyFGQuglReIEB7x1MaTCqhAfU5W54reJ71HEM6xpnePsgo5FNkSm%2F%2F7xUeWutMeNg7C6a50If8uK44gqk4lvqjqFe%2Ft6l88frEiRLvyJpFplg09vAyyPqN8t0XHhfN%2FKQY7iB8ZGggqYEQp%2FRGzS8Z%2FSigbV1xhh2%2F%2FIYWLc9owA9vREwFWvhgmYwv5ZsspEg%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb184f0700>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:18:22,779 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15646'}
+2024-01-26 17:18:22,779 ERROR   wandb-upload_0:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:18:26,606 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:18:31,608 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:18:36,610 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:18:41,612 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:18:46,614 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:18:51,617 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:18:56,619 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:19:01,621 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:19:06,624 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:19:11,626 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:19:16,628 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:19:21,630 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:19:26,633 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:19:31,635 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:19:36,637 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:19:41,257 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/4c5eecce3762d6201f9f2c7c9b21094b?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=k9soxPWb1aFQr51TR2N8PgWjgqsuv3aDXJ598toRz7%2FQUMzNsB2ble1Mm5ieuZ2gJTpug5G6f3wtQ%2FgyVToNgTEb9fniuKJC82HEpMagOe%2F29bIOpoCUCoqnkAM2IwCENO9pJ4KISl0qQXUJtSG8e13%2BO1rgMhsFbMPn%2BMEEYr6Bi7y2z9O%2FRbDOoiSkIvkJMbj6zi%2FsnDPqo%2F2vRqQ74AwthcV30y58Qzh8pf93nf%2BF5yRk4Mv8q9D9xmkxmYCcJihPUf8guFlXzifFFWucBNvJ70eFz5MHEylFJndfBAd2IGDfmtJxMqByZm99RnRwMnD0nB%2FvFmUvg7%2BkX4FMvQ%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb184e32e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:19:41,258 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'TF7szjdi1iAfnyx8myEJSw==', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '1292'}
+2024-01-26 17:19:41,258 ERROR   wandb-upload_1:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:19:41,640 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:19:42,627 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-artifacts-prod/wandb_artifacts/133981200/703789177/6873c23a2381d1524249eb1a948a45a5?Expires=1706346907&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=W56xvJASJ%2B61DeUm4ICoHbD%2Fok%2B%2BD9JnAQV9tv480O5JY%2B43yce19hkzFp0711DA1hDqJPKKlWpqfZ44FscqCH8dvOdR9KW0Cey7is5BWMQus5ZrmZeeWD0rE4tN%2B0PooTjyd6Ew%2BF0kNNovo5L1bZL02MsgrjK4SPaVHRgyZpzGP9Rio6K78tbmgZcX6cfcw9xBXbTrXORc4VE2eE1lPUB4n8PJfeSBzm%2FKOlFgIfkV4hMdsqLkLJGsy8uTMtyQAHp4r0EaJy%2BIVYDroNaX2NJRdKMScgG8tl7qZPsxAjyS2KjUB8PETibCS7CqclnTDMQ0MCSQw%2FhGx1tW0piY9g%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ffb184eb0d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:19:42,627 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': 'aHPCOiOB0VJCSesalIpFpQ==', 'Content-Type': 'application/json', 'Content-Length': '609'}
+2024-01-26 17:19:42,627 ERROR   wandb-upload_2:3042419 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:19:46,641 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:19:51,643 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:19:56,645 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:20:01,647 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:20:06,649 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:20:11,657 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:20:16,659 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:20:21,661 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:20:26,663 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:20:31,666 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:20:36,668 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:20:41,670 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:20:46,672 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:20:51,674 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:20:56,675 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:21:01,678 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:21:06,680 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:21:11,686 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:21:16,688 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:21:21,690 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:21:26,692 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:21:31,694 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:21:36,696 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:21:41,699 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:21:46,701 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:21:51,703 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:21:56,706 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:22:01,708 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:22:06,710 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:22:11,712 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:22:16,715 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:22:21,717 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:22:26,719 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:22:31,721 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:22:36,723 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:22:41,725 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:22:46,727 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:22:51,729 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:22:56,731 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:23:01,734 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:23:06,736 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:23:11,738 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:23:16,743 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:23:21,745 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:23:26,746 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:23:31,748 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:23:36,750 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:23:41,752 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:23:46,754 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:23:51,756 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:23:56,758 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:24:01,760 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:24:06,762 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:24:11,764 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:24:16,766 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:24:21,066 INFO    wandb-upload_2:3042419 [upload_job.py:push():89] Uploaded file /home/yanxindong/.local/share/wandb/artifacts/staging/tmpzf67k42g
+2024-01-26 17:24:21,768 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:24:25,244 INFO    wandb-upload_0:3042419 [upload_job.py:push():131] Uploaded file /tmp/tmpvt7sc6c6wandb/uy2rg85c-wandb-metadata.json
+2024-01-26 17:24:26,770 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:24:31,772 DEBUG   HandlerThread:3042419 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:24:33,801 WARNING StreamThr :3042419 [internal.py:is_dead():414] Internal process exiting, parent pid 3042145 disappeared
+2024-01-26 17:24:33,801 ERROR   StreamThr :3042419 [internal.py:wandb_internal():152] Internal process shutdown.
+2024-01-26 17:24:34,614 INFO    WriterThread:3042419 [datastore.py:close():296] close: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/run-cbvqbddu.wandb
+2024-01-26 17:24:34,774 INFO    HandlerThread:3042419 [handler.py:finish():869] shutting down handler
+2024-01-26 17:24:51,502 INFO    wandb-upload_1:3042419 [upload_job.py:push():89] Uploaded file /home/yanxindong/.local/share/wandb/artifacts/staging/tmpvn7xmfhy
+2024-01-26 17:24:53,199 INFO    SenderThread:3042419 [sender.py:send_artifact():1494] sent artifact job-https___github.com_kkkjj-d_mkor.git_bert_run_pretraining.py - {'id': 'QXJ0aWZhY3Q6NzAzNzg5MTc3', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEzMzk4MTIwMA==', 'latestArtifact': None}}
+2024-01-26 17:24:53,199 INFO    SenderThread:3042419 [sender.py:finish():1572] shutting down sender
+2024-01-26 17:24:53,199 INFO    SenderThread:3042419 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-01-26 17:24:53,336 INFO    SenderThread:3042419 [dir_watcher.py:finish():388] scan: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files
+2024-01-26 17:24:53,336 INFO    SenderThread:3042419 [dir_watcher.py:finish():402] scan save: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/wandb-summary.json wandb-summary.json
+2024-01-26 17:24:53,336 INFO    SenderThread:3042419 [dir_watcher.py:finish():402] scan save: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/conda-environment.yaml conda-environment.yaml
+2024-01-26 17:24:53,336 INFO    SenderThread:3042419 [dir_watcher.py:finish():402] scan save: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/wandb-metadata.json wandb-metadata.json
+2024-01-26 17:24:53,336 INFO    SenderThread:3042419 [dir_watcher.py:finish():402] scan save: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/output.log output.log
+2024-01-26 17:24:53,337 INFO    SenderThread:3042419 [dir_watcher.py:finish():402] scan save: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/requirements.txt requirements.txt
+2024-01-26 17:24:53,337 INFO    SenderThread:3042419 [dir_watcher.py:finish():402] scan save: /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/config.yaml config.yaml
+2024-01-26 17:24:53,339 INFO    SenderThread:3042419 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-26 17:24:53,341 INFO    SenderThread:3042419 [file_pusher.py:join():181] waiting for file pusher
+2024-01-26 17:24:53,999 INFO    wandb-upload_2:3042419 [upload_job.py:push():131] Uploaded file /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/conda-environment.yaml
+2024-01-26 17:24:54,559 INFO    wandb-upload_4:3042419 [upload_job.py:push():131] Uploaded file /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/config.yaml
+2024-01-26 17:24:54,559 INFO    wandb-upload_1:3042419 [upload_job.py:push():131] Uploaded file /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/requirements.txt
+2024-01-26 17:24:55,084 INFO    wandb-upload_3:3042419 [upload_job.py:push():131] Uploaded file /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/wandb-summary.json
+2024-01-26 17:24:55,142 INFO    wandb-upload_0:3042419 [upload_job.py:push():131] Uploaded file /home/yanxindong/mkor/bert/wandb/run-20240126_170845-cbvqbddu/files/output.log
+2024-01-26 17:24:55,347 INFO    SenderThread:3042419 [file_stream.py:finish():595] file stream finish called
+2024-01-26 17:24:55,628 INFO    SenderThread:3042419 [file_stream.py:finish():599] file stream finish is done

@@ -1,0 +1,40 @@
+  0%|                                                                                                      | 0/210632 [00:08<?, ?it/s]
+Traceback (most recent call last):
+  File "run_pretraining.py", line 735, in <module>
+    global_steps, train_time = main(args)
+  File "run_pretraining.py", line 633, in main
+    loss = forward_backward_pass(model, criterion, scaler, batch,
+  File "run_pretraining.py", line 548, in forward_backward_pass
+    prediction_scores, seq_relationship_score = model(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/parallel/distributed.py", line 886, in forward
+    output = self.module(*inputs[0], **kwargs[0])
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 935, in forward
+    encoded_layers, pooled_output = self.bert(input_ids, token_type_ids, attention_mask)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 864, in forward
+    embedding_output = timer("Embedding", self.embeddings, input_ids, token_type_ids)
+  File "/home/yanxindong/mkor/bert/timer.py", line 101, in __call__
+    output = func(*args, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 377, in forward
+    embeddings = self.LayerNorm(embeddings)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 334, in forward
+    x = self.fused_layer_norm(x)
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 328, in fused_layer_norm
+    return FusedLayerNormAffineFunction.apply(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/apex/normalization/fused_layer_norm.py", line 37, in forward
+    fused_layer_norm_cuda = importlib.import_module("fused_layer_norm_cuda")
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'fused_layer_norm_cuda'

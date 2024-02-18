@@ -1,0 +1,327 @@
+2024-01-26 17:34:42,257 INFO    StreamThr :3081774 [internal.py:wandb_internal():86] W&B internal server running at pid: 3081774, started at: 2024-01-26 17:34:42.255454
+2024-01-26 17:34:42,298 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status
+2024-01-26 17:34:42,301 INFO    WriterThread:3081774 [datastore.py:open_for_write():87] open: /home/yanxindong/mkor/bert/wandb/run-20240126_173442-8kyhcwyv/run-8kyhcwyv.wandb
+2024-01-26 17:34:42,301 DEBUG   SenderThread:3081774 [sender.py:send():382] send: header
+2024-01-26 17:34:42,301 DEBUG   SenderThread:3081774 [sender.py:send():382] send: run
+2024-01-26 17:34:45,407 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: check_version
+2024-01-26 17:34:45,427 INFO    SenderThread:3081774 [dir_watcher.py:__init__():211] watching files in: /home/yanxindong/mkor/bert/wandb/run-20240126_173442-8kyhcwyv/files
+2024-01-26 17:34:45,427 INFO    SenderThread:3081774 [sender.py:_start_run_threads():1136] run started: 8kyhcwyv with start time 1706261682.213996
+2024-01-26 17:34:45,427 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: check_version
+2024-01-26 17:34:45,953 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: run_start
+2024-01-26 17:34:45,980 DEBUG   HandlerThread:3081774 [system_info.py:__init__():27] System info init
+2024-01-26 17:34:45,980 DEBUG   HandlerThread:3081774 [system_info.py:__init__():42] System info init done
+2024-01-26 17:34:45,980 INFO    HandlerThread:3081774 [system_monitor.py:start():194] Starting system monitor
+2024-01-26 17:34:45,997 INFO    HandlerThread:3081774 [system_monitor.py:probe():214] Collecting system info
+2024-01-26 17:34:45,984 INFO    SystemMonitor:3081774 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-01-26 17:34:46,013 INFO    SystemMonitor:3081774 [interfaces.py:start():190] Started cpu monitoring
+2024-01-26 17:34:46,019 INFO    SystemMonitor:3081774 [interfaces.py:start():190] Started disk monitoring
+2024-01-26 17:34:46,061 INFO    SystemMonitor:3081774 [interfaces.py:start():190] Started gpu monitoring
+2024-01-26 17:34:46,074 INFO    SystemMonitor:3081774 [interfaces.py:start():190] Started memory monitoring
+2024-01-26 17:34:46,084 INFO    SystemMonitor:3081774 [interfaces.py:start():190] Started network monitoring
+2024-01-26 17:34:46,218 DEBUG   HandlerThread:3081774 [system_info.py:probe():151] Probing system
+2024-01-26 17:34:46,281 DEBUG   HandlerThread:3081774 [system_info.py:_probe_git():136] Probing git
+2024-01-26 17:34:46,346 DEBUG   HandlerThread:3081774 [system_info.py:_probe_git():144] Probing git done
+2024-01-26 17:34:46,346 DEBUG   HandlerThread:3081774 [system_info.py:probe():199] Probing system done
+2024-01-26 17:34:46,346 DEBUG   HandlerThread:3081774 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-91-generic-x86_64-with-glibc2.17', 'python': '3.8.17', 'heartbeatAt': '2024-01-26T09:34:46.218420', 'startedAt': '2024-01-26T09:34:42.197836', 'docker': None, 'cuda': None, 'args': ('--local_rank=1', '--config_file', 'config/bert_pretraining_phase2_config.json', '--input_dir', '/home/yanxindong/mkor/bert/data/encoded/sequences_lowercase_max_seq_len_512_next_seq_task_true', '--output_dir', 'results/adam', '--weight_decay', '0.01', '--num_steps_per_checkpoint', '200'), 'state': 'running', 'program': 'run_pretraining.py', 'codePathLocal': 'run_pretraining.py', 'codePath': 'bert/run_pretraining.py', 'git': {'remote': 'https://github.com/kkkjj-d/mkor.git', 'commit': 'efe99e84fef5594780cfb1df6d6a1f61da4ebba0'}, 'email': '1262670315@qq.com', 'root': '/home/yanxindong/mkor', 'host': 'a6000-X640-G40', 'username': 'yanxindong', 'executable': '/home/yanxindong/anaconda/envs/eva/bin/python', 'cpu_count': 64, 'cpu_count_logical': 128, 'cpu_freq': {'current': 2485.4043515625012, 'min': 800.0, 'max': 3400.0}, 'cpu_freq_per_core': [{'current': 3300.0, 'min': 800.0, 'max': 3400.0}, {'current': 900.0, 'min': 800.0, 'max': 3400.0}, {'current': 900.0, 'min': 800.0, 'max': 3400.0}, {'current': 3300.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2700.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2703.57, 'min': 800.0, 'max': 3400.0}, {'current': 3300.0, 'min': 800.0, 'max': 3400.0}, {'current': 3000.0, 'min': 800.0, 'max': 3400.0}, {'current': 1100.0, 'min': 800.0, 'max': 3400.0}, {'current': 3300.0, 'min': 800.0, 'max': 3400.0}, {'current': 2100.0, 'min': 800.0, 'max': 3400.0}, {'current': 2400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3300.0, 'min': 800.0, 'max': 3400.0}, {'current': 3069.837, 'min': 800.0, 'max': 3400.0}, {'current': 1800.0, 'min': 800.0, 'max': 3400.0}, {'current': 1800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2900.0, 'min': 800.0, 'max': 3400.0}, {'current': 2000.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 2800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3100.0, 'min': 800.0, 'max': 3400.0}, {'current': 1100.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3000.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 2600.0, 'min': 800.0, 'max': 3400.0}, {'current': 3000.0, 'min': 800.0, 'max': 3400.0}, {'current': 2800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 2690.201, 'min': 800.0, 'max': 3400.0}, {'current': 2008.005, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 1900.0, 'min': 800.0, 'max': 3400.0}, {'current': 3300.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3225.011, 'min': 800.0, 'max': 3400.0}, {'current': 1891.996, 'min': 800.0, 'max': 3400.0}, {'current': 2300.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2600.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 900.0, 'min': 800.0, 'max': 3400.0}, {'current': 2549.718, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2000.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2698.859, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3012.036, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3300.001, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 900.0, 'min': 800.0, 'max': 3400.0}, {'current': 2500.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 2700.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 1900.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3017.505, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 3300.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 1600.0, 'min': 800.0, 'max': 3400.0}, {'current': 3300.0, 'min': 800.0, 'max': 3400.0}, {'current': 2500.0, 'min': 800.0, 'max': 3400.0}, {'current': 900.0, 'min': 800.0, 'max': 3400.0}, {'current': 2300.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2100.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 1627.816, 'min': 800.0, 'max': 3400.0}, {'current': 2800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3077.108, 'min': 800.0, 'max': 3400.0}, {'current': 1600.0, 'min': 800.0, 'max': 3400.0}, {'current': 2900.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 1100.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 1000.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2766.173, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}], 'disk': {'/': {'total': 438.05088806152344, 'used': 28.072593688964844}}, 'gpu': 'NVIDIA RTX A6000', 'gpu_count': 8, 'gpu_devices': [{'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}], 'memory': {'total': 503.51250076293945}}
+2024-01-26 17:34:46,346 INFO    HandlerThread:3081774 [system_monitor.py:probe():224] Finished collecting system info
+2024-01-26 17:34:46,346 INFO    HandlerThread:3081774 [system_monitor.py:probe():227] Publishing system info
+2024-01-26 17:34:46,346 DEBUG   HandlerThread:3081774 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-01-26 17:34:46,428 INFO    Thread-12 :3081774 [dir_watcher.py:_on_file_created():271] file/dir created: /home/yanxindong/mkor/bert/wandb/run-20240126_173442-8kyhcwyv/files/conda-environment.yaml
+2024-01-26 17:34:56,429 INFO    Thread-12 :3081774 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yanxindong/mkor/bert/wandb/run-20240126_173442-8kyhcwyv/files/conda-environment.yaml
+2024-01-26 17:34:56,757 DEBUG   HandlerThread:3081774 [system_info.py:_save_conda():220] Saving conda packages done
+2024-01-26 17:34:56,758 INFO    HandlerThread:3081774 [system_monitor.py:probe():229] Finished publishing system info
+2024-01-26 17:34:56,769 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:34:56,806 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:34:56,806 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:34:56,806 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:34:56,806 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: python_packages
+2024-01-26 17:34:56,806 DEBUG   SenderThread:3081774 [sender.py:send():382] send: files
+2024-01-26 17:34:56,807 INFO    SenderThread:3081774 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-01-26 17:34:56,808 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: python_packages
+2024-01-26 17:34:56,833 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:34:56,837 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:34:56,881 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:34:57,154 DEBUG   SenderThread:3081774 [sender.py:send():382] send: telemetry
+2024-01-26 17:34:57,429 INFO    Thread-12 :3081774 [dir_watcher.py:_on_file_created():271] file/dir created: /home/yanxindong/mkor/bert/wandb/run-20240126_173442-8kyhcwyv/files/wandb-metadata.json
+2024-01-26 17:34:57,429 INFO    Thread-12 :3081774 [dir_watcher.py:_on_file_created():271] file/dir created: /home/yanxindong/mkor/bert/wandb/run-20240126_173442-8kyhcwyv/files/requirements.txt
+2024-01-26 17:34:57,804 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dynamic_x/bert_pytorch/8kyhcwyv/wandb-metadata.json?Expires=1706348097&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=T%2BB4E7j5cvHKtRvTQpX2UmJX95ia5KBOWknRBX5aDS3r1sm6RpjLeOxKZMnyNIMQrgx5NF4uIIxhDbsqnkWF%2FXIjCtAatFyEYGCn%2B%2FnPTLquX0xKxmP3HB1KAt99xg0X7HWqvuOdAr2pop7CnBzwvb%2B7vPPb7DWg9xih2GBsAv9LlzWGCdYuV1qUdWEbK0O%2Bo8iyN9lfuxtXbxZ%2BYAW%2BpHBRAs7exPTPbf0cZS%2BpKVFCmhAckWoi8x4H%2BE8WT0f2JQ3Znl18KJ652w5SY2JEXk%2FaBGHOxmeO9nU0RrAPVrH8vbN1nqAu8czf2uUIG%2BM2kWQx%2BemCQeuUL3tJTD%2Fafw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/8kyhcwyv/wandb-metadata.json?Expires=1706348097&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=T%2BB4E7j5cvHKtRvTQpX2UmJX95ia5KBOWknRBX5aDS3r1sm6RpjLeOxKZMnyNIMQrgx5NF4uIIxhDbsqnkWF%2FXIjCtAatFyEYGCn%2B%2FnPTLquX0xKxmP3HB1KAt99xg0X7HWqvuOdAr2pop7CnBzwvb%2B7vPPb7DWg9xih2GBsAv9LlzWGCdYuV1qUdWEbK0O%2Bo8iyN9lfuxtXbxZ%2BYAW%2BpHBRAs7exPTPbf0cZS%2BpKVFCmhAckWoi8x4H%2BE8WT0f2JQ3Znl18KJ652w5SY2JEXk%2FaBGHOxmeO9nU0RrAPVrH8vbN1nqAu8czf2uUIG%2BM2kWQx%2BemCQeuUL3tJTD%2Fafw%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2e1c413e50>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:34:57,804 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15649'}
+2024-01-26 17:34:57,804 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:34:58,155 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:34:58,838 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dynamic_x/bert_pytorch/8kyhcwyv/wandb-metadata.json?Expires=1706348097&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=T%2BB4E7j5cvHKtRvTQpX2UmJX95ia5KBOWknRBX5aDS3r1sm6RpjLeOxKZMnyNIMQrgx5NF4uIIxhDbsqnkWF%2FXIjCtAatFyEYGCn%2B%2FnPTLquX0xKxmP3HB1KAt99xg0X7HWqvuOdAr2pop7CnBzwvb%2B7vPPb7DWg9xih2GBsAv9LlzWGCdYuV1qUdWEbK0O%2Bo8iyN9lfuxtXbxZ%2BYAW%2BpHBRAs7exPTPbf0cZS%2BpKVFCmhAckWoi8x4H%2BE8WT0f2JQ3Znl18KJ652w5SY2JEXk%2FaBGHOxmeO9nU0RrAPVrH8vbN1nqAu8czf2uUIG%2BM2kWQx%2BemCQeuUL3tJTD%2Fafw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/8kyhcwyv/wandb-metadata.json?Expires=1706348097&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=T%2BB4E7j5cvHKtRvTQpX2UmJX95ia5KBOWknRBX5aDS3r1sm6RpjLeOxKZMnyNIMQrgx5NF4uIIxhDbsqnkWF%2FXIjCtAatFyEYGCn%2B%2FnPTLquX0xKxmP3HB1KAt99xg0X7HWqvuOdAr2pop7CnBzwvb%2B7vPPb7DWg9xih2GBsAv9LlzWGCdYuV1qUdWEbK0O%2Bo8iyN9lfuxtXbxZ%2BYAW%2BpHBRAs7exPTPbf0cZS%2BpKVFCmhAckWoi8x4H%2BE8WT0f2JQ3Znl18KJ652w5SY2JEXk%2FaBGHOxmeO9nU0RrAPVrH8vbN1nqAu8czf2uUIG%2BM2kWQx%2BemCQeuUL3tJTD%2Fafw%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2e1c45dd90>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:34:58,838 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15649'}
+2024-01-26 17:34:58,838 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:35:01,155 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dynamic_x/bert_pytorch/8kyhcwyv/wandb-metadata.json?Expires=1706348097&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=T%2BB4E7j5cvHKtRvTQpX2UmJX95ia5KBOWknRBX5aDS3r1sm6RpjLeOxKZMnyNIMQrgx5NF4uIIxhDbsqnkWF%2FXIjCtAatFyEYGCn%2B%2FnPTLquX0xKxmP3HB1KAt99xg0X7HWqvuOdAr2pop7CnBzwvb%2B7vPPb7DWg9xih2GBsAv9LlzWGCdYuV1qUdWEbK0O%2Bo8iyN9lfuxtXbxZ%2BYAW%2BpHBRAs7exPTPbf0cZS%2BpKVFCmhAckWoi8x4H%2BE8WT0f2JQ3Znl18KJ652w5SY2JEXk%2FaBGHOxmeO9nU0RrAPVrH8vbN1nqAu8czf2uUIG%2BM2kWQx%2BemCQeuUL3tJTD%2Fafw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/8kyhcwyv/wandb-metadata.json?Expires=1706348097&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=T%2BB4E7j5cvHKtRvTQpX2UmJX95ia5KBOWknRBX5aDS3r1sm6RpjLeOxKZMnyNIMQrgx5NF4uIIxhDbsqnkWF%2FXIjCtAatFyEYGCn%2B%2FnPTLquX0xKxmP3HB1KAt99xg0X7HWqvuOdAr2pop7CnBzwvb%2B7vPPb7DWg9xih2GBsAv9LlzWGCdYuV1qUdWEbK0O%2Bo8iyN9lfuxtXbxZ%2BYAW%2BpHBRAs7exPTPbf0cZS%2BpKVFCmhAckWoi8x4H%2BE8WT0f2JQ3Znl18KJ652w5SY2JEXk%2FaBGHOxmeO9nU0RrAPVrH8vbN1nqAu8czf2uUIG%2BM2kWQx%2BemCQeuUL3tJTD%2Fafw%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2e1c424400>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:35:01,155 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15649'}
+2024-01-26 17:35:01,155 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:35:01,155 INFO    wandb-upload_0:3081774 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f2e1c424400>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/8kyhcwyv/wandb-metadata.json?Expires=1706348097&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=T%2BB4E7j5cvHKtRvTQpX2UmJX95ia5KBOWknRBX5aDS3r1sm6RpjLeOxKZMnyNIMQrgx5NF4uIIxhDbsqnkWF%2FXIjCtAatFyEYGCn%2B%2FnPTLquX0xKxmP3HB1KAt99xg0X7HWqvuOdAr2pop7CnBzwvb%2B7vPPb7DWg9xih2GBsAv9LlzWGCdYuV1qUdWEbK0O%2Bo8iyN9lfuxtXbxZ%2BYAW%2BpHBRAs7exPTPbf0cZS%2BpKVFCmhAckWoi8x4H%2BE8WT0f2JQ3Znl18KJ652w5SY2JEXk%2FaBGHOxmeO9nU0RrAPVrH8vbN1nqAu8czf2uUIG%2BM2kWQx%2BemCQeuUL3tJTD%2Fafw%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2e1c424400>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 2758, in upload_file
+    response = self._upload_file_session.put(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/8kyhcwyv/wandb-metadata.json?Expires=1706348097&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=T%2BB4E7j5cvHKtRvTQpX2UmJX95ia5KBOWknRBX5aDS3r1sm6RpjLeOxKZMnyNIMQrgx5NF4uIIxhDbsqnkWF%2FXIjCtAatFyEYGCn%2B%2FnPTLquX0xKxmP3HB1KAt99xg0X7HWqvuOdAr2pop7CnBzwvb%2B7vPPb7DWg9xih2GBsAv9LlzWGCdYuV1qUdWEbK0O%2Bo8iyN9lfuxtXbxZ%2BYAW%2BpHBRAs7exPTPbf0cZS%2BpKVFCmhAckWoi8x4H%2BE8WT0f2JQ3Znl18KJ652w5SY2JEXk%2FaBGHOxmeO9nU0RrAPVrH8vbN1nqAu8czf2uUIG%2BM2kWQx%2BemCQeuUL3tJTD%2Fafw%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2e1c424400>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 2789, in upload_file
+    raise _e.with_traceback(sys.exc_info()[2])
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 2758, in upload_file
+    response = self._upload_file_session.put(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+wandb.sdk.lib.retry.TransientError: None
+2024-01-26 17:35:03,155 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:35:05,435 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dynamic_x/bert_pytorch/8kyhcwyv/wandb-metadata.json?Expires=1706348097&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=T%2BB4E7j5cvHKtRvTQpX2UmJX95ia5KBOWknRBX5aDS3r1sm6RpjLeOxKZMnyNIMQrgx5NF4uIIxhDbsqnkWF%2FXIjCtAatFyEYGCn%2B%2FnPTLquX0xKxmP3HB1KAt99xg0X7HWqvuOdAr2pop7CnBzwvb%2B7vPPb7DWg9xih2GBsAv9LlzWGCdYuV1qUdWEbK0O%2Bo8iyN9lfuxtXbxZ%2BYAW%2BpHBRAs7exPTPbf0cZS%2BpKVFCmhAckWoi8x4H%2BE8WT0f2JQ3Znl18KJ652w5SY2JEXk%2FaBGHOxmeO9nU0RrAPVrH8vbN1nqAu8czf2uUIG%2BM2kWQx%2BemCQeuUL3tJTD%2Fafw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/8kyhcwyv/wandb-metadata.json?Expires=1706348097&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=T%2BB4E7j5cvHKtRvTQpX2UmJX95ia5KBOWknRBX5aDS3r1sm6RpjLeOxKZMnyNIMQrgx5NF4uIIxhDbsqnkWF%2FXIjCtAatFyEYGCn%2B%2FnPTLquX0xKxmP3HB1KAt99xg0X7HWqvuOdAr2pop7CnBzwvb%2B7vPPb7DWg9xih2GBsAv9LlzWGCdYuV1qUdWEbK0O%2Bo8iyN9lfuxtXbxZ%2BYAW%2BpHBRAs7exPTPbf0cZS%2BpKVFCmhAckWoi8x4H%2BE8WT0f2JQ3Znl18KJ652w5SY2JEXk%2FaBGHOxmeO9nU0RrAPVrH8vbN1nqAu8czf2uUIG%2BM2kWQx%2BemCQeuUL3tJTD%2Fafw%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2e1c413ac0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:35:05,435 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15649'}
+2024-01-26 17:35:05,435 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:35:08,156 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:35:11,818 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:35:11,819 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:35:11,879 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:35:14,055 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dynamic_x/bert_pytorch/8kyhcwyv/wandb-metadata.json?Expires=1706348097&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=T%2BB4E7j5cvHKtRvTQpX2UmJX95ia5KBOWknRBX5aDS3r1sm6RpjLeOxKZMnyNIMQrgx5NF4uIIxhDbsqnkWF%2FXIjCtAatFyEYGCn%2B%2FnPTLquX0xKxmP3HB1KAt99xg0X7HWqvuOdAr2pop7CnBzwvb%2B7vPPb7DWg9xih2GBsAv9LlzWGCdYuV1qUdWEbK0O%2Bo8iyN9lfuxtXbxZ%2BYAW%2BpHBRAs7exPTPbf0cZS%2BpKVFCmhAckWoi8x4H%2BE8WT0f2JQ3Znl18KJ652w5SY2JEXk%2FaBGHOxmeO9nU0RrAPVrH8vbN1nqAu8czf2uUIG%2BM2kWQx%2BemCQeuUL3tJTD%2Fafw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/8kyhcwyv/wandb-metadata.json?Expires=1706348097&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=T%2BB4E7j5cvHKtRvTQpX2UmJX95ia5KBOWknRBX5aDS3r1sm6RpjLeOxKZMnyNIMQrgx5NF4uIIxhDbsqnkWF%2FXIjCtAatFyEYGCn%2B%2FnPTLquX0xKxmP3HB1KAt99xg0X7HWqvuOdAr2pop7CnBzwvb%2B7vPPb7DWg9xih2GBsAv9LlzWGCdYuV1qUdWEbK0O%2Bo8iyN9lfuxtXbxZ%2BYAW%2BpHBRAs7exPTPbf0cZS%2BpKVFCmhAckWoi8x4H%2BE8WT0f2JQ3Znl18KJ652w5SY2JEXk%2FaBGHOxmeO9nU0RrAPVrH8vbN1nqAu8czf2uUIG%2BM2kWQx%2BemCQeuUL3tJTD%2Fafw%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2e1c379ca0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:35:14,055 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15649'}
+2024-01-26 17:35:14,055 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:35:14,729 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:35:17,435 INFO    Thread-12 :3081774 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yanxindong/mkor/bert/wandb/run-20240126_173442-8kyhcwyv/files/config.yaml
+2024-01-26 17:35:21,614 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:35:26,658 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:35:26,818 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:35:26,819 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:35:26,899 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:35:32,134 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:35:33,047 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dynamic_x/bert_pytorch/8kyhcwyv/wandb-metadata.json?Expires=1706348097&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=T%2BB4E7j5cvHKtRvTQpX2UmJX95ia5KBOWknRBX5aDS3r1sm6RpjLeOxKZMnyNIMQrgx5NF4uIIxhDbsqnkWF%2FXIjCtAatFyEYGCn%2B%2FnPTLquX0xKxmP3HB1KAt99xg0X7HWqvuOdAr2pop7CnBzwvb%2B7vPPb7DWg9xih2GBsAv9LlzWGCdYuV1qUdWEbK0O%2Bo8iyN9lfuxtXbxZ%2BYAW%2BpHBRAs7exPTPbf0cZS%2BpKVFCmhAckWoi8x4H%2BE8WT0f2JQ3Znl18KJ652w5SY2JEXk%2FaBGHOxmeO9nU0RrAPVrH8vbN1nqAu8czf2uUIG%2BM2kWQx%2BemCQeuUL3tJTD%2Fafw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/8kyhcwyv/wandb-metadata.json?Expires=1706348097&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=T%2BB4E7j5cvHKtRvTQpX2UmJX95ia5KBOWknRBX5aDS3r1sm6RpjLeOxKZMnyNIMQrgx5NF4uIIxhDbsqnkWF%2FXIjCtAatFyEYGCn%2B%2FnPTLquX0xKxmP3HB1KAt99xg0X7HWqvuOdAr2pop7CnBzwvb%2B7vPPb7DWg9xih2GBsAv9LlzWGCdYuV1qUdWEbK0O%2Bo8iyN9lfuxtXbxZ%2BYAW%2BpHBRAs7exPTPbf0cZS%2BpKVFCmhAckWoi8x4H%2BE8WT0f2JQ3Znl18KJ652w5SY2JEXk%2FaBGHOxmeO9nU0RrAPVrH8vbN1nqAu8czf2uUIG%2BM2kWQx%2BemCQeuUL3tJTD%2Fafw%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2e1c45df10>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:35:33,047 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15649'}
+2024-01-26 17:35:33,047 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:35:37,135 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:35:41,818 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:35:41,819 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:35:41,879 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:35:42,174 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:35:46,084 DEBUG   SystemMonitor:3081774 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-01-26 17:35:46,089 DEBUG   SenderThread:3081774 [sender.py:send():382] send: stats
+2024-01-26 17:35:48,090 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:35:53,091 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:35:56,818 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:35:56,819 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:35:56,879 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:35:58,117 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:36:03,156 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:36:05,407 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2765] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dynamic_x/bert_pytorch/8kyhcwyv/wandb-metadata.json?Expires=1706348097&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=T%2BB4E7j5cvHKtRvTQpX2UmJX95ia5KBOWknRBX5aDS3r1sm6RpjLeOxKZMnyNIMQrgx5NF4uIIxhDbsqnkWF%2FXIjCtAatFyEYGCn%2B%2FnPTLquX0xKxmP3HB1KAt99xg0X7HWqvuOdAr2pop7CnBzwvb%2B7vPPb7DWg9xih2GBsAv9LlzWGCdYuV1qUdWEbK0O%2Bo8iyN9lfuxtXbxZ%2BYAW%2BpHBRAs7exPTPbf0cZS%2BpKVFCmhAckWoi8x4H%2BE8WT0f2JQ3Znl18KJ652w5SY2JEXk%2FaBGHOxmeO9nU0RrAPVrH8vbN1nqAu8czf2uUIG%2BM2kWQx%2BemCQeuUL3tJTD%2Fafw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dynamic_x/bert_pytorch/8kyhcwyv/wandb-metadata.json?Expires=1706348097&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=T%2BB4E7j5cvHKtRvTQpX2UmJX95ia5KBOWknRBX5aDS3r1sm6RpjLeOxKZMnyNIMQrgx5NF4uIIxhDbsqnkWF%2FXIjCtAatFyEYGCn%2B%2FnPTLquX0xKxmP3HB1KAt99xg0X7HWqvuOdAr2pop7CnBzwvb%2B7vPPb7DWg9xih2GBsAv9LlzWGCdYuV1qUdWEbK0O%2Bo8iyN9lfuxtXbxZ%2BYAW%2BpHBRAs7exPTPbf0cZS%2BpKVFCmhAckWoi8x4H%2BE8WT0f2JQ3Znl18KJ652w5SY2JEXk%2FaBGHOxmeO9nU0RrAPVrH8vbN1nqAu8czf2uUIG%2BM2kWQx%2BemCQeuUL3tJTD%2Fafw%3D%3D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2e1c45d6a0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-01-26 17:36:05,407 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2767] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15649'}
+2024-01-26 17:36:05,407 ERROR   wandb-upload_0:3081774 [internal_api.py:upload_file():2769] upload_file response body: 
+2024-01-26 17:36:08,235 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:36:11,861 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:36:11,861 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:36:11,880 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:36:14,171 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:36:16,091 DEBUG   SenderThread:3081774 [sender.py:send():382] send: stats
+2024-01-26 17:36:20,093 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:36:25,102 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:36:26,819 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:36:26,819 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:36:26,880 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:36:31,088 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:36:32,617 INFO    Thread-12 :3081774 [dir_watcher.py:_on_file_created():271] file/dir created: /home/yanxindong/mkor/bert/wandb/run-20240126_173442-8kyhcwyv/files/output.log
+2024-01-26 17:36:34,617 INFO    Thread-12 :3081774 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/yanxindong/mkor/bert/wandb/run-20240126_173442-8kyhcwyv/files/output.log
+2024-01-26 17:36:36,145 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:36:41,146 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:36:45,625 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:36:45,625 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-26 17:36:45,626 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:36:46,092 DEBUG   SenderThread:3081774 [sender.py:send():382] send: stats
+2024-01-26 17:36:47,093 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:36:51,765 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-26 17:36:52,765 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:36:57,810 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:37:00,643 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:37:00,648 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:37:02,950 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:37:07,950 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:37:12,979 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:37:15,622 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:37:15,622 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:37:16,081 INFO    wandb-upload_0:3081774 [upload_job.py:push():131] Uploaded file /tmp/tmpv1amumtlwandb/r0cgij8q-wandb-metadata.json
+2024-01-26 17:37:16,094 DEBUG   SenderThread:3081774 [sender.py:send():382] send: stats
+2024-01-26 17:37:18,111 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:37:23,126 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:37:28,127 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:37:30,646 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:37:30,646 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:37:33,981 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:37:38,982 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:37:43,982 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:37:45,622 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:37:45,622 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:37:46,098 DEBUG   SenderThread:3081774 [sender.py:send():382] send: stats
+2024-01-26 17:37:49,099 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:37:54,100 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:37:59,100 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:38:00,622 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:38:00,624 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:38:04,877 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:38:10,013 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:38:15,013 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:38:15,622 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:38:15,623 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:38:16,116 DEBUG   SenderThread:3081774 [sender.py:send():382] send: stats
+2024-01-26 17:38:20,120 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:38:25,128 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:38:30,224 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:38:30,622 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:38:30,623 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:38:36,150 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:38:41,310 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:38:45,623 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:38:45,623 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:38:46,119 DEBUG   SenderThread:3081774 [sender.py:send():382] send: stats
+2024-01-26 17:38:47,120 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:38:52,121 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:38:57,122 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:39:00,623 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:39:00,623 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:39:02,897 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:39:07,898 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:39:12,899 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:39:15,623 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:39:15,623 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:39:16,120 DEBUG   SenderThread:3081774 [sender.py:send():382] send: stats
+2024-01-26 17:39:18,190 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:39:23,210 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:39:28,238 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:39:30,623 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:39:30,623 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:39:33,949 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:39:38,998 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:39:44,094 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:39:45,623 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:39:45,623 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:39:46,140 DEBUG   SenderThread:3081774 [sender.py:send():382] send: stats
+2024-01-26 17:39:49,165 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:39:54,194 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:39:59,194 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:40:00,623 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:40:00,623 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:40:04,949 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:40:09,950 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:40:14,950 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:40:15,623 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:40:15,623 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:40:16,144 DEBUG   SenderThread:3081774 [sender.py:send():382] send: stats
+2024-01-26 17:40:20,146 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:40:25,147 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:40:30,147 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:40:30,670 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:40:30,674 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:40:36,012 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:40:41,064 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:40:45,623 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:40:45,624 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:40:46,268 DEBUG   SenderThread:3081774 [sender.py:send():382] send: stats
+2024-01-26 17:40:46,269 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:40:51,270 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:40:56,288 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:41:00,623 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:41:00,624 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:41:02,028 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:41:07,028 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:41:12,034 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:41:15,624 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:41:15,624 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:41:16,147 DEBUG   SenderThread:3081774 [sender.py:send():382] send: stats
+2024-01-26 17:41:17,149 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:41:22,149 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:41:27,150 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:41:30,624 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:41:30,624 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:41:32,938 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:41:37,959 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:41:43,082 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:41:45,685 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:41:45,685 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:41:46,152 DEBUG   SenderThread:3081774 [sender.py:send():382] send: stats
+2024-01-26 17:41:48,153 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:41:53,174 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:41:58,179 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:42:00,624 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:42:00,624 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:42:03,968 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:42:08,969 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:42:13,970 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:42:15,624 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:42:15,624 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:42:16,152 DEBUG   SenderThread:3081774 [sender.py:send():382] send: stats
+2024-01-26 17:42:19,153 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:42:24,154 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:42:29,155 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:42:30,624 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:42:30,624 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:42:34,985 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:42:40,031 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:42:45,074 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:42:45,624 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:42:45,624 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:42:46,154 DEBUG   SenderThread:3081774 [sender.py:send():382] send: stats
+2024-01-26 17:42:50,238 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:42:55,410 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:43:00,410 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report
+2024-01-26 17:43:00,624 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-26 17:43:00,625 DEBUG   SenderThread:3081774 [sender.py:send_request():409] send_request: stop_status
+2024-01-26 17:43:03,982 INFO    memory    :3081774 [interfaces.py:monitor():140] Process proc.memory.rssMB has exited.
+2024-01-26 17:43:03,985 DEBUG   SystemMonitor:3081774 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-01-26 17:43:03,985 DEBUG   SystemMonitor:3081774 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-01-26 17:43:03,988 DEBUG   SenderThread:3081774 [sender.py:send():382] send: stats
+2024-01-26 17:43:04,412 INFO    MainThread:3081774 [internal.py:handle_exit():76] Internal process exited
+2024-01-26 17:43:05,989 DEBUG   HandlerThread:3081774 [handler.py:handle_request():146] handle_request: status_report

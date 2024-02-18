@@ -18,7 +18,8 @@
 
 import argparse
 import json
-import loggerplus as logger
+# import loggerplus as logger
+import logging
 import math
 import multiprocessing
 import numpy as np
@@ -29,20 +30,18 @@ import time
 import warnings
 import torch
 
-try:
-    import kfac
-except:
-    pass
-try:
-    from apex.optimizers import FusedLAMB
-except:
-    from optimizers.lamb import LAMBOptimizer as FusedLAMB
+# try:
+#     import kfac
+# except:
+#     pass
+
+from optimizers.lamb import LAMBOptimizer as FusedLAMB
 from torch.utils.data import DataLoader
 from torch.utils.data.distributed import DistributedSampler
 from torch.nn.parallel import DistributedDataParallel as DDP
 from tqdm import tqdm
 from pathlib import Path
-
+from collections import OrderedDict
 import src.modeling as modeling
 
 from src.dataset import ShardedPretrainingDataset, DistributedSampler
@@ -68,7 +67,8 @@ except:
 # Track whether a SIGTERM (cluster time up) has been handled
 timeout_sent = False
 
-
+logger = logging.getLogger(__name__
+                           )
 # handle SIGTERM sent from the scheduler and mark so we
 # can gracefully save & exit
 def signal_handler(sig, frame):
@@ -108,6 +108,8 @@ def parse_arguments():
                         help="The input data dir containing .hdf5 files for the task.")
     parser.add_argument("--output_dir", default=None, type=str,
                         help="The output dir for checkpoints and logging.")
+    parser.add_argument("--model_ckpt_dir", default=None, type=str,
+                        help="The input dir for checkpoints.")
     parser.add_argument("--model_config_file", default=None, type=str,
                         help="The BERT model config")
 
@@ -157,6 +159,8 @@ def parse_arguments():
                         help="Total number of training steps to perform.")
     parser.add_argument("--previous_phase_end_step", default=0, type=int,
                         help="Final step of previous phase")
+    parser.add_argument("--additional", default='', type=str,
+                        help="additional text")
 
     ## KFAC Hyperparameters
     parser.add_argument('--kfac', default=False, action='store_true',
@@ -211,20 +215,20 @@ def setup_training(args):
     if is_main_process():
         os.makedirs(args.model_output_dir, exist_ok=True)
 
-    logger.init(
-        handlers=[
-            logger.StreamHandler(verbose=is_main_process()),
-            logger.FileHandler(
-                os.path.join(args.output_dir, args.log_prefix + '.txt'),
-                overwrite=False, verbose=is_main_process()),
-            logger.TorchTensorboardHandler(
-                os.path.join(args.output_dir, 'tensorboard'),
-                verbose=is_main_process()),
-            logger.CSVHandler(
-                os.path.join(args.output_dir, args.log_prefix + '_metrics.csv'),
-                overwrite=False, verbose=is_main_process()),
-        ]
-    )
+    # logger.init(
+    #     handlers=[
+    #         logger.StreamHandler(verbose=is_main_process()),
+    #         logger.FileHandler(
+    #             os.path.join(args.output_dir, args.log_prefix + '.txt'),
+    #             overwrite=False, verbose=is_main_process()),
+    #         logger.TorchTensorboardHandler(
+    #             os.path.join(args.output_dir, 'tensorboard'),
+    #             verbose=is_main_process()),
+    #         logger.CSVHandler(
+    #             os.path.join(args.output_dir, args.log_prefix + '_metrics.csv'),
+    #             overwrite=False, verbose=is_main_process()),
+    #     ]
+    # )
 
     logger.info('Torch distributed initialized (world_size={}, backend={})'.format(
         get_world_size(), torch.distributed.get_backend()))
@@ -252,6 +256,18 @@ def setup_training(args):
 
     return args
 
+def remap_parameters(model_dict):
+    res_dict = OrderedDict()
+    for k in model_dict:
+        if 'intermediate.dense' in k or 'pooler.dense' in k:
+            new_k = k.replace('dense', 'dense_act')
+        elif 'transform.dense' in k:
+            new_k = k.replace('dense', 'dense_act')
+        else:
+            new_k = k
+        res_dict[new_k] = model_dict[k]
+    model_dict.clear()
+    return res_dict
 
 def prepare_model(args):
     config = modeling.BertConfig.from_json_file(args.model_config_file)
@@ -269,18 +285,20 @@ def prepare_model(args):
     checkpoint = None
     global_steps = 0
     args.resume_step = 0
-    checkpoint_names = [f for f in os.listdir(args.model_output_dir)
+    checkpoint_names = [f for f in os.listdir(args.model_ckpt_dir)
                         if f.endswith(".pt")]
     if len(checkpoint_names) > 0:
         args.resume_step = max([int(x.split('.pt')[0].split('_')[1].strip())
                                 for x in checkpoint_names])
 
         checkpoint = torch.load(
-            os.path.join(args.model_output_dir, "ckpt_{}.pt".format(args.resume_step)),
+            os.path.join(args.model_ckpt_dir, "ckpt_{}.pt".format(args.resume_step)),
             map_location="cpu"
         )
-
-        model.load_state_dict(checkpoint['model'], strict=False)
+        new_checkpoint = remap_parameters(checkpoint['model'])
+        model.load_state_dict(new_checkpoint, strict=True)
+        print("+++++++++++++++++++++++++")
+        print("load!")
 
         if args.previous_phase_end_step > args.resume_step:
             raise ValueError('previous_phase_end_step={} cannot be larger '
@@ -326,12 +344,16 @@ def get_optimizer(grouped_parameters, lr, model, optimizer_name, weight_decay=0.
         sgd_layers = [module for module in model.modules() if
                       isinstance(module, torch.nn.Linear) and module.out_features == 30528]
         # backend = comm.get_comm_backend()
+        # optimizer = eva.Eva(model, lr=lr, sgd_layers=sgd_layers,
+        #                         optimizer=FusedLAMB(grouped_parameters, lr=lr),
+        #                     )
+        # the repository use lamb here
         optimizer = eva.Eva(model, lr=lr, sgd_layers=sgd_layers,
-                                optimizer=FusedLAMB(grouped_parameters, lr=lr),
+                                optimizer=FusedLAMB(grouped_parameters, lr=lr, betas=(0.86,0.975)),
                             )
         return optimizer
     elif optimizer_name == 'lamb':
-        return FusedLAMB(grouped_parameters, lr=lr)
+        return FusedLAMB(grouped_parameters, lr=lr, betas=(0.86,0.975))
     elif optimizer_name == 'mkor':
         sgd_layers = [module for module in model.modules() if
                       isinstance(module, torch.nn.Linear) and module.out_features == 30528]
@@ -427,28 +449,28 @@ def prepare_optimizers(args, model, checkpoint, global_steps):
 
     preconditioner = None
     if args.kfac:
-        preconditioner = kfac.KFAC(
-            model,
-            lr=args.learning_rate,
-            factor_decay=args.kfac_stat_decay,
-            damping=args.kfac_damping,
-            kl_clip=args.kfac_kl_clip,
-            factor_update_freq=args.kfac_factor_interval,
-            inv_update_freq=args.kfac_inv_interval,
-            # Skip TrainingHeads which contains the decoder, a Linear module
-            # with shape (seq_len, vocab_size), such that it is too large to invert
-            skip_layers=args.kfac_skip_layers,
-            # BERT calls KFAC very infrequently so no need to optimize for
-            # communication. Optimize for memory instead.
-            comm_method=kfac.CommMethod.MEM_OPT,
-            # Compute the factors and update the running averages during the
-            # forward backward pass b/c we are using grad accumulation but
-            # not accumulating the input/output data
-            accumulate_data=False,
-            compute_factor_in_hook=True,
-            distribute_layer_factors=False,
-            # grad_scaler=scaler,
-        )
+        # preconditioner = kfac.KFAC(
+        #     model,
+        #     lr=args.learning_rate,
+        #     factor_decay=args.kfac_stat_decay,
+        #     damping=args.kfac_damping,
+        #     kl_clip=args.kfac_kl_clip,
+        #     factor_update_freq=args.kfac_factor_interval,
+        #     inv_update_freq=args.kfac_inv_interval,
+        #     # Skip TrainingHeads which contains the decoder, a Linear module
+        #     # with shape (seq_len, vocab_size), such that it is too large to invert
+        #     skip_layers=args.kfac_skip_layers,
+        #     # BERT calls KFAC very infrequently so no need to optimize for
+        #     # communication. Optimize for memory instead.
+        #     comm_method=kfac.CommMethod.MEM_OPT,
+        #     # Compute the factors and update the running averages during the
+        #     # forward backward pass b/c we are using grad accumulation but
+        #     # not accumulating the input/output data
+        #     accumulate_data=False,
+        #     compute_factor_in_hook=True,
+        #     distribute_layer_factors=False,
+        #     # grad_scaler=scaler,
+        # )
 
         lrs = Scheduler(preconditioner, warmup=args.warmup_proportion,
                         total_steps=args.max_steps)
@@ -508,6 +530,7 @@ def prepare_dataset(args, checkpoint):
 
 
 def take_optimizer_step(optimizer, preconditioner, model, scaler):
+    # torch.nn.utils.clip_grad_norm_(model.parameters(),2.0,2)
     if preconditioner is not None:
         if scaler is not None:
             scaler.unscale_(optimizer)
@@ -641,21 +664,33 @@ def main(args):
 
 
             if sync_grads:
-                for lrs in lr_schedulers:
-                    lrs.step()
                 take_optimizer_step(optimizer, preconditioner,
                                     model, scaler)
+                for lrs in lr_schedulers:
+                    lrs.step()
                 global_steps += 1
                 if average_loss is None:
                     average_loss = current_loss
                 else:
                     average_loss = 0.95 * average_loss + 0.05 * current_loss
-                logger.log(tag='train',
-                           step=global_steps + args.previous_phase_end_step,
-                           epoch=epoch,
-                           average_loss=average_loss,
-                           step_loss=current_loss,
-                           learning_rate=optimizer.param_groups[0]['lr'])
+                # logger.log(tag='train',
+                #            step=global_steps + args.previous_phase_end_step,
+                #            epoch=epoch,
+                #            average_loss=average_loss,
+                #            step_loss=current_loss,
+                #            learning_rate=optimizer.param_groups[0]['lr'])
+                if is_main_process():
+                    wandb.log(
+                           {"step":global_steps + args.previous_phase_end_step,
+                           "epoch":epoch,
+                           "average_loss":average_loss,
+                           "step_loss":current_loss,
+                           "learning_rate":optimizer.param_groups[0]['lr']})
+                    if args.optimizer == 'eva':
+                        wandb.log(
+                            {'vg_sum':optimizer.vg_sum,
+                            "damping":optimizer.damping,
+                            "kl_clip":optimizer.kl_clip})
                 current_loss = 0.
 
             if (global_steps >= args.max_steps or timeout_sent or
@@ -718,6 +753,9 @@ if __name__ == "__main__":
     torch.cuda.manual_seed(args.seed + args.local_rank)
 
     args = setup_training(args)
+    if is_main_process():
+        import wandb
+        wandb.init(project="bert_pytorch",name=args.optimizer + str(args.learning_rate),notes=args.additional,mode='offline')
     logger.info('TRAINING CONFIG: {}'.format(args))
     with open(args.model_config_file) as f:
         logger.info('MODEL CONFIG: {}'.format(json.load(f)))
