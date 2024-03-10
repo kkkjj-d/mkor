@@ -43,5 +43,5 @@ bash scripts/launch_pretraining.sh  \
    --output_dir /home/yanxindong/mkor/mkor_results/eva \
    --model_ckpt_dir "/home/yanxindong/mkor/data/ckpt_dir_mlperf"  \
    --weight_decay 0.01 \
-   --num_steps_per_checkpoint 800 \
+   --num_steps_per_checkpoint 400 \
    --additional $NOTE

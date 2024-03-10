@@ -91,7 +91,7 @@ if [[ "$NNODES" -eq 1 ]]; then
 else
     python -m torch.distributed.launch \
         --nproc_per_node=$NGPUS --nnodes=$NNODES \
-        --node_rank=$LOCAL_RANK --master_addr=$MASTER \
+        --node_rank=$LOCAL_RANK --master_addr=$MASTER --master_port=1117 \
         run_pretraining.py $KWARGS
 fi
 # torchrun --nproc_per_node=$NGPUS \

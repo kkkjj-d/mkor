@@ -297,7 +297,7 @@ def prepare_model(args):
         )
         new_checkpoint = remap_parameters(checkpoint['model'])
         model.load_state_dict(new_checkpoint, strict=True)
-        print("+++++++++++++++++++++++++")
+        # print("+++++++++++++++++++++++++")
         print("load!")
 
         if args.previous_phase_end_step > args.resume_step:
@@ -318,38 +318,60 @@ def prepare_model(args):
     return model, checkpoint, global_steps, criterion, args
 
 
-def set_no_decay(model, optimizer):
-    no_decay = ['bias', 'gamma', 'beta', 'LayerNorm']
-    no_decay_param_group = {"params": [], "weight_decay": 0.0}
-    for key, value in optimizer.param_groups[0].items():
-        if key not in ["params", "weight_decay"]:
-            no_decay_param_group[key] = value
-    params = optimizer.param_groups[0]["params"]
-    for name, param in model.named_parameters():
-        if any(nd in name for nd in no_decay):
-            no_decay_param_group["params"].append(param)
-            for i in range(len(params)):
-                if param.shape == params[i].shape and torch.all(param == params[i]):
-                    del params[i]
-                    break
-    optimizer.param_groups.append(no_decay_param_group)
-    if hasattr(optimizer, 'optimizer'):
-        optimizer.optimizer.param_groups.append(no_decay_param_group)
-    return optimizer
+# def set_no_decay(model, optimizer):
+#     no_decay = ['bias', 'gamma', 'beta', 'LayerNorm']
+#     no_decay_param_group = {"params": [], "weight_decay": 0.0}
+#     for key, value in optimizer.param_groups[0].items():
+#         if key not in ["params", "weight_decay"]:
+#             no_decay_param_group[key] = value
+#     params = optimizer.param_groups[0]["params"]
+#     for name, param in model.named_parameters():
+#         if any(nd in name for nd in no_decay):
+#             no_decay_param_group["params"].append(param)
+#             for i in range(len(params)):
+#                 if param.shape == params[i].shape and torch.all(param == params[i]):
+#                     del params[i]
+#                     break
+#     optimizer.param_groups.append(no_decay_param_group)
+#     if hasattr(optimizer, 'optimizer'):
+#         optimizer.optimizer.param_groups.append(no_decay_param_group)
+#     return optimizer
 
 
 def get_optimizer(grouped_parameters, lr, model, optimizer_name, weight_decay=0.01):
     if optimizer_name == 'eva':
         eva_backend.init("Torch")
-        sgd_layers = [module for module in model.modules() if
-                      isinstance(module, torch.nn.Linear) and module.out_features == 30528]
+        lamb_parameters = []
+        eva_parameters = []
+        lamb_names = []
+        eva_names = []
+        supported_modules = ['Linear','Conv2d','LinearActivation']
+        # sgd_layers = [module for module in model.modules() if
+        #               isinstance(module, torch.nn.Linear) and module.out_features == 30528]
+        # print([[module.__class__.__name__,len([mc for mc in module.named_children()])] for module in model.modules()])
+        # print([p for p in model.parameters()])
+        for module in model.modules():
+            # print(module)
+            # print(len([mc for mc in module.named_children()]),module.__class__.__name__)
+            if module.__class__.__name__ in supported_modules:
+                e_p = {"params":module.parameters()}
+                eva_parameters.append(e_p)
+                # print("eva!\n")
+            elif len([mc for mc in module.named_children()]) == 0 and module.__class__.__name__ != "Identity":
+                l_p1 = {"params":module.parameters()}
+                lamb_parameters.append(l_p1)
+                # print(module)
+                # print("lamb!\n")
+            else:
+                # print("skip!\n")
+                continue
         # backend = comm.get_comm_backend()
         # optimizer = eva.Eva(model, lr=lr, sgd_layers=sgd_layers,
         #                         optimizer=FusedLAMB(grouped_parameters, lr=lr),
         #                     )
         # the repository use lamb here
-        optimizer = eva.Eva(model, lr=lr, sgd_layers=sgd_layers,
-                                optimizer=FusedLAMB(grouped_parameters, lr=lr, betas=(0.86,0.975)),
+        optimizer = eva.Eva(model, lr=lr, eva_parameters=eva_parameters,lamb_parameters=lamb_parameters,
+                                optimizer=SGD(eva_parameters,lr=lr),optimizer1=FusedLAMB(lamb_parameters, lr=0.0005, betas=(0.86,0.975))
                             )
         return optimizer
     elif optimizer_name == 'lamb':
@@ -434,11 +456,23 @@ def prepare_optimizers(args, model, checkpoint, global_steps):
             for param_group in optimizer.param_groups:
                 param_group['step'] = global_steps
 
-    try:
-        lr_schedulers = [Scheduler(optimizer, warmup=args.warmup_proportion,
-                                   total_steps=args.max_steps)]
-    except:
-        lr_schedulers = [Scheduler(optimizer, T_max=args.max_steps, eta_min=args.learning_rate * 1e-4)]
+    
+    if args.optimizer == 'eva':
+        try:
+            lr_schedulers = [Scheduler(optimizer.optimizer, warmup=args.warmup_proportion,
+                                       total_steps=32000)]
+        except:
+            lr_schedulers = [Scheduler(optimizer.optimizer, T_max=32000, eta_min=args.learning_rate * 1e-4)]
+        
+        lr_scheduler_1 = CosineAnnealingLR(optimizer.optimizer1, T_max=32000, eta_min=0.0005 * 1e-4) 
+        lr_schedulers.append(lr_scheduler_1)
+    else:
+        try:
+            lr_schedulers = [Scheduler(optimizer, warmup=args.warmup_proportion,
+                                    total_steps=32000)]
+        except:
+            lr_schedulers = [Scheduler(optimizer, T_max=32000, eta_min=args.learning_rate * 1e-4)]
+
     scaler = None
     if args.fp16:
         scaler = GradScaler()
@@ -473,7 +507,7 @@ def prepare_optimizers(args, model, checkpoint, global_steps):
         # )
 
         lrs = Scheduler(preconditioner, warmup=args.warmup_proportion,
-                        total_steps=args.max_steps)
+                        total_steps=32000)
         lr_schedulers.append(lrs)
 
         if checkpoint is not None and 'preconditioner' in checkpoint:
@@ -548,6 +582,8 @@ def take_optimizer_step(optimizer, preconditioner, model, scaler):
         optimizer.zero_grad()
         if hasattr(optimizer, "optimizer"):
             optimizer.optimizer.zero_grad()
+        if hasattr(optimizer, "optimizer1"):
+            optimizer.optimizer1.zero_grad()
     except:
         for param in model.parameters():
             param.grad = None
@@ -639,6 +675,7 @@ def main(args):
     # Note: We loop infinitely over epochs, termination is handled
     #       via iteration count
     while True:
+        datasampler.set_epoch(epoch)
         if not args.disable_progress_bar:
             train_iter = tqdm(dataloader, disable=not is_main_process())
         else:
@@ -707,12 +744,19 @@ def main(args):
                     output_save_file = os.path.join(
                         args.model_output_dir,
                         "ckpt_{}.pt".format(global_steps + args.previous_phase_end_step))
-                    model_dict = {
-                        'model': model_to_save.state_dict(),
-                        'optimizer': optimizer.state_dict(),
-                        'sampler': datasampler.state_dict(),
-                        'epoch': epoch,
-                    }
+                    if args.optimizer != 'eva':
+                        model_dict = {
+                            'model': model_to_save.state_dict(),
+                            'optimizer': optimizer.state_dict(),
+                            'sampler': datasampler.state_dict(),
+                            'epoch': epoch,
+                        }
+                    else:
+                        model_dict = {
+                            'model': model_to_save.state_dict(),
+                            'sampler': datasampler.state_dict(),
+                            'epoch': epoch,
+                        }
                     if preconditioner is not None:
                         model_dict['preconditioner'] = preconditioner.state_dict()
                     if scaler is not None:

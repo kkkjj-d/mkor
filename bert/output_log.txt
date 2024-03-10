@@ -1,0 +1,534 @@
+Local Rank set to MV2_COMM_WORLD_RANK:
+Launching torch.distributed: nproc_per_node=1, nnodes=1, master_addr=0, local_rank=, OMP_NUM_THREADS=8, host=haigpu1
+python -m torch.distributed.launch --nproc_per_node=1 run_pretraining.py --config_file config/bert_pretraining_phase2_config.json --input_dir /home/yanxindong/mkor/data/encoded/sequences_lowercase_max_seq_len_512_next_seq_task_true --output_dir /home/yanxindong/mkor/mkor_results/eva --model_ckpt_dir /home/yanxindong/mkor/data/ckpt_dir_mlperf --weight_decay 0.01 --num_steps_per_checkpoint 400 --additional none
+Better speed can be achieved with apex installed from https://www.github.com/nvidia/apex.
+load!
+Embedding(30528, 1024)
+lamb!
+
+Embedding(512, 1024)
+lamb!
+
+Embedding(2, 1024)
+lamb!
+
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+1024
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+4096
+1024
+BertLayerNorm()
+lamb!
+
+Dropout(p=0.1, inplace=False)
+lamb!
+
+1024
+1024
+BertLayerNorm()
+lamb!
+
+30528
+Linear(in_features=1024, out_features=30528, bias=False)
+lamb!
+
+2

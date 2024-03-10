@@ -1,0 +1,47 @@
+
+load!
+  0%|                                                                                                             | 0/105316 [00:00<?, ?it/s]/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py:1025: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+  0%|                                                                                                             | 0/105316 [03:41<?, ?it/s]
+Traceback (most recent call last):
+  File "run_pretraining.py", line 765, in <module>
+    global_steps, train_time = main(args)
+  File "run_pretraining.py", line 655, in main
+    loss = forward_backward_pass(model, criterion, scaler, batch,
+  File "run_pretraining.py", line 569, in forward_backward_pass
+    prediction_scores, seq_relationship_score = model(
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/parallel/distributed.py", line 886, in forward
+    output = self.module(*inputs[0], **kwargs[0])
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 938, in forward
+    encoded_layers, pooled_output = self.bert(input_ids, token_type_ids, attention_mask)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 868, in forward
+    encoded_layers = self.encoder(embedding_output, extended_attention_mask)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 542, in forward
+    hidden_states = layer_module(hidden_states, attention_mask)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 504, in forward
+    intermediate_output = self.intermediate(attention_output)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 477, in forward
+    hidden_states = timer(fused + "Linear Layer", self.dense_act, hidden_states)
+  File "/home/yanxindong/mkor/bert/timer.py", line 101, in __call__
+    output = func(*args, **kwargs)
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 184, in forward
+    return self.biased_act_fn(self.bias, F.linear(input, self.weight, None))
+  File "/home/yanxindong/mkor/bert/src/modeling.py", line 135, in bias_gelu_training
+    return torch.nn.functional.gelu(x) # Breaks ONNX export
+  File "/home/yanxindong/anaconda/envs/eva/lib/python3.8/site-packages/torch/nn/functional.py", line 1556, in gelu
+    return torch._C._nn.gelu(input)
+RuntimeError: CUDA out of memory. Tried to allocate 128.00 MiB (GPU 0; 47.54 GiB total capacity; 3.79 GiB already allocated; 80.88 MiB free; 4.09 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

@@ -29,7 +29,8 @@ def get_damping(step):
     # return damping
     return 0.03
 
-class Eva(optim.Optimizer):
+# class Eva(optim.Optimizer):
+class Eva():
     """Accelerate Distributed K-FAC with Sublinear Memory Cost
     Args:
       model (nn): Torch model
@@ -44,18 +45,21 @@ class Eva(optim.Optimizer):
     def __init__(self,
                  model,
                  optimizer,
-                 sgd_layers,
+                 optimizer1,
+                 eva_parameters,
+                 lamb_parameters,
                  lr=0.1,
-                 damping=0.03,
+                 damping=0.3,
                  fac_update_freq=1,
                  kfac_update_freq=1,
                  kfac_batch_size=16,
                  kl_clip=0.001,
-                 factor_decay=0.95,
-                 exclude_vocabulary_size=None,
+                 factor_decay=0.9,
+                 exclude_vocabulary_size=30528,
                  hook_enabled=True,
                  exclude_parts='',
-                 grad_scale=1.0):
+                 grad_scale=1.0
+                 ):
 
         # For compatibility with `KFACParamScheduler`
         defaults = dict(lr=lr,
@@ -63,14 +67,16 @@ class Eva(optim.Optimizer):
                         fac_update_freq=fac_update_freq,
                         kfac_update_freq=kfac_update_freq) 
 
-        super(Eva, self).__init__(model.parameters(), defaults)
+        # super(Eva, self).__init__([], defaults)
 
         self.lr = lr
         self.damping = damping
         self.fac_update_freq = fac_update_freq
         self.kfac_update_freq = kfac_update_freq
 
-        self.sgd_layers = sgd_layers
+        # self.sgd_layers = sgd_layers
+        self.lamb_parameters = lamb_parameters
+        self.eva_parameters = eva_parameters
         self.grad_scale = grad_scale
 
         self.fac_update_freq = fac_update_freq
@@ -94,9 +100,17 @@ class Eva(optim.Optimizer):
 
         self.steps = 0
         self.optimizer = optimizer
+        self.optimizer1 = optimizer1
         self.param_groups = optimizer.param_groups
+        self.param_groups1 = optimizer1.param_groups
+        ''' TODO
+            设定好optimizer的param_groups类，与run_pretraining.py中进行对接，还要保证lr_scheduler的正常使用
+        '''
         self.param_groups[0]['step'] = 0
+        self.param_groups1[0]['step'] = 0
         self.vg_sum = 0
+
+        self.optimizer_base = optimizer1
 
     def update_grad_scale(self, scaler):
         self.grad_scale = scaler
@@ -138,11 +152,11 @@ class Eva(optim.Optimizer):
 
     def _register_module_hooks(self, model):
         """Register forard/backward hooks to supported modules"""
-        supported_modules = {'Linear', 'Conv2d'}
+        supported_modules = {'Linear', 'Conv2d', 'LinearActivation'}
         name_idx = 0
         for module in model.modules():
-            if module in self.sgd_layers:
-                continue
+            # if module in self.sgd_layers:
+            #     continue
             classname = module.__class__.__name__
             if classname in supported_modules:
                 if self.exclude_vocabulary_size is not None and classname == 'Linear' and module.out_features == self.exclude_vocabulary_size:
@@ -242,7 +256,9 @@ class Eva(optim.Optimizer):
         grad = grad.to(dtype=torch.float32)
         return grad    
 
-
+    def zero_grad(self):
+        pass
+        
     ### Perform one K-FAC step
     @torch.no_grad()
     def step(self, closure=None, epoch=None):
@@ -263,5 +279,7 @@ class Eva(optim.Optimizer):
         self._precondition_grads()
 
         self.optimizer.step()
+        self.optimizer1.step()
         self.steps += 1
         self.param_groups[0]['step'] += 1
+        self.param_groups1[0]['step'] += 1

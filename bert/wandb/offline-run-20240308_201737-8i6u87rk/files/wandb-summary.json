@@ -1,0 +1,1 @@
+{"step": 5000, "epoch": 0, "average_loss": NaN, "step_loss": NaN, "learning_rate": 0.00047048326805547723, "_timestamp": 1709904724.0179472, "_runtime": 4466.29815030098, "_step": 9999, "vg_sum": NaN, "damping": 0.03, "kl_clip": 0.001, "_wandb": {"runtime": 4471}}

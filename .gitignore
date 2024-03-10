@@ -1,3 +1,6 @@
 .bash_history/*
 .cache/*
 .idea/*
+
+data/
+mkor_results/
