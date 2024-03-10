@@ -19,3 +19,4 @@ hostfile
 data/
 mkor_results/
 bert/wandb
+wandb/
