@@ -112,6 +112,11 @@ class Eva():
 
         self.optimizer_base = optimizer1
 
+        self.accu_a = {}
+        self.a_cnt = {}
+        self.accu_g = {}
+        self.g_cnt = {}
+
     def update_grad_scale(self, scaler):
         self.grad_scale = scaler
         # print("Getting Scaler: ", scaler)
@@ -126,12 +131,18 @@ class Eva():
             with torch.no_grad():
                 new = get_vector_a(input[0].data[0:self.kfac_batch_size], module).to(dtype=torch.float32)
                 if module not in self.m_a:
-                    self.m_a[module] = new
+                    self.m_a[module] = torch.zeros(new.size()).to('cuda')
+                    self.a_cnt[module] = 1
+                    self.accu_a[module] = new
                 else:
-                    #self.m_a[module].mul_(self.factor_decay).add_(new, alpha=1-self.factor_decay)
-                    self.m_a[module].mul_(1-self.factor_decay).add_(new, alpha=self.factor_decay)
-                    #xi =  math.pow(self.steps+1, -self.factor_decay)
-                    #self.m_a[module].mul_(1-xi).add_(new, alpha=xi)
+                    self.accu_a[module] = self.accu_a[module] + new
+                    if self.a_cnt[module] == 7:
+                        self.m_a[module].mul_(1-self.factor_decay).add_(self.accu_a[module], alpha=self.factor_decay)
+                        self.accu_a[module] = new
+                        self.a_cnt[module] = 1
+                    else:
+                        self.a_cnt[module] += 1
+                        self.accu_a[module] = self.accu_a[module] + new
             if backend.comm.size() > 1:
                 self.handles.append(backend.comm.allreduce_async_(self.m_a[module], op=backend.comm.Average))
 
@@ -141,12 +152,18 @@ class Eva():
             with torch.no_grad():
                 new = get_vector_g(grad_output[0].data[0:self.kfac_batch_size], module).to(dtype=torch.float32) / self.grad_scale
                 if module not in self.m_g:
-                    self.m_g[module] = new
+                    self.m_g[module] = torch.zeros(new.size()).to('cuda')
+                    self.g_cnt[module] = 1
+                    self.accu_g[module] = new
                 else:
-                    #self.m_g[module].mul_(self.factor_decay).add_(new, alpha=1-self.factor_decay)
-                    self.m_g[module].mul_(1-self.factor_decay).add_(new, alpha=self.factor_decay)
-                    #xi =  math.pow(self.steps+1, -self.factor_decay)
-                    #self.m_g[module].mul_(1-xi).add_(new, alpha=xi)
+                    self.accu_g[module] = self.accu_g[module] + new
+                    if self.g_cnt[module] == 7:
+                        self.m_g[module].mul_(1-self.factor_decay).add_(self.accu_g[module], alpha=self.factor_decay)
+                        self.accu_g[module] = new
+                        self.g_cnt[module] = 1
+                    else:
+                        self.g_cnt[module] += 1
+                        self.accu_g[module] = self.accu_g[module] + new
             if backend.comm.size() > 1:
                 self.handles.append(backend.comm.allreduce_async_(self.m_g[module], op=backend.comm.Average))
 

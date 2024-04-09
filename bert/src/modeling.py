@@ -328,7 +328,7 @@ class BertLayerNorm(Module):
     @torch.jit.unused
     def fused_layer_norm(self, x):
         return FusedLayerNormAffineFunction.apply(
-                    x, self.weight, self.bias, self.shape, self.eps)
+                    x, self.weight, self.bias, self.shape, self.eps, False)
 
 
     def forward(self, x):

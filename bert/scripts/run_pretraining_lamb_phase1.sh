@@ -14,10 +14,10 @@ fi
 
 if [[ "$PHASE" -eq 1 ]]; then
         CONFIG=config/bert_pretraining_phase2_config.json
-        DATA=/home/yanxindong/mkor/data/encoded/sequences_lowercase_max_seq_len_512_next_seq_task_true
+        DATA=/share/datasets/bert/bert_pretrain_phase2_data_encoded/sequences_lowercase_max_seq_len_512_next_seq_task_true
 else
         CONFIG=config/bert_kfac_pretraining_phase2_config.json
-        DATA=/home/yanxindong/mkor/data/encoded/sequences_lowercase_max_seq_len_512_next_seq_task_true
+        DATA=/share/datasets/bert/bert_pretrain_phase2_data_encoded/sequences_lowercase_max_seq_len_512_next_seq_task_true
 fi
 
 mkdir -p logs
@@ -40,8 +40,9 @@ bash scripts/launch_pretraining.sh  \
     --kwargs \
    --config_file $CONFIG \
    --input_dir $DATA \
-   --output_dir /home/yanxindong/mkor/mkor_results/eva \
-   --model_ckpt_dir "/home/yanxindong/mkor/data/ckpt_dir_mlperf"  \
+   --output_dir /workspace/mkor/mkor_results/eva \
    --weight_decay 0.01 \
    --num_steps_per_checkpoint 400 \
    --additional $NOTE
+
+#    --model_ckpt_dir "/workspace/mkor/data/ckpt_dir_mlperf"  \
